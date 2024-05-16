@@ -1,5 +1,4 @@
 # JFLAP
-
 JFLAP/Tutorial_JFLAP_Files.zip
 JFLAP/Tutorial_JFLAP_Files
 JFLAP/*.pdf
@@ -10,10 +9,14 @@ JFLAP/*.jar
 # Prolog
 Prolog/**/*_output.txt
 
+# SemanticWeb
+SemanticWeb/**/.idea
+SemanticWeb/**/target
+SemanticWeb/**/tdb
+
 # SPIN
 
 # TLAplus
-
 TLAplus/**/*.cfg
 TLAplus/**/*.old
 TLAplus/**/*.out
