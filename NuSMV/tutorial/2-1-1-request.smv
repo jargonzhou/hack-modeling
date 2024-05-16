@@ -1,0 +1,18 @@
+/--
+NuSMV 2.6 Tutorial
+2 Examples
+2.1.1 Single Process Example
+--/
+
+MODULE main
+VAR
+  request : boolean;
+  status : {ready,busy};
+ASSIGN
+  init(status) := ready;
+  next(status) := case
+                    status = ready & request = TRUE : busy;
+                    TRUE : {ready,busy};
+                  esac;
+-- LTLSPEC
+--  G(request -> F status=busy)

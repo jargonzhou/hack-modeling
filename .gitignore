@@ -1,0 +1,21 @@
+# JFLAP
+
+JFLAP/Tutorial_JFLAP_Files.zip
+JFLAP/Tutorial_JFLAP_Files
+JFLAP/*.pdf
+JFLAP/*.jar
+
+# NuSMV
+
+# Prolog
+Prolog/**/*_output.txt
+
+# SPIN
+
+# TLAplus
+
+TLAplus/**/*.cfg
+TLAplus/**/*.old
+TLAplus/**/*.out
+TLAplus/**/states
+TLAplus/**/*.toolbox

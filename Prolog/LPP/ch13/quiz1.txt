@@ -1,0 +1,14 @@
+title('Are you a genius? Answer our quiz and find out!').
+
+question('What is the name of this planet?',
+[ans('Earth',20),ans('The Moon',5),ans('John',0)],20). 
+
+question('What is the capital of England?',
+[ans('America',0),ans('Paris',6),ans('London',50), ans('Moscow',4)],50).
+
+question('In which country will you find the Sydney Opera House?',
+[ans('London',5),ans('Toronto',4),ans('The Moon',2), ans('Australia',10),ans('Germany',8)],10).
+
+range(0,20,'You are definitely not a genius').
+range(21,60,'You need to do some more reading').
+range(61,80,'You are a genius!').

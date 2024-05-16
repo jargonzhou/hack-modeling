@@ -1,0 +1,20 @@
+/--
+NuSMV 2.6 Tutorial
+2 Examples
+2.3 Direct Specification
+--/
+
+MODULE main
+  VAR
+    gate1 : inverter(gate3.output);
+    gate2 : inverter(gate1.output);
+    gate3 : inverter(gate2.output);
+
+MODULE inverter(input)
+  VAR
+    output : boolean;
+  INIT
+    output = FALSE
+  TRANS
+    next(output) = !input | next(output) = output
+

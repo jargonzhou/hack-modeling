@@ -1,0 +1,35 @@
+/--
+NuSMV 2.6 Tutorial
+2 Examples
+2.2.2 Mutual Exclusion
+--/
+
+MODULE main
+  VAR
+    semaphore : boolean;
+    proc1 : process user(semaphore);
+    proc2 : process user(semaphore);
+  ASSIGN
+    init(semaphore) := FALSE;
+
+MODULE user(semaphore)
+  VAR
+    state : {idle, entering, critical, exiting};
+  ASSIGN
+    init(state) := idle;
+    next(state) :=
+      case
+        state = idle                  : {idle, entering};
+        state = entering & !semaphore : critical;
+        state = critical              : {critical, exiting};
+        state = exiting               : idle;
+        TRUE                          : state;
+      esac;
+    next(semaphore) :=
+      case
+        state = entering  : TRUE;
+        state = exiting   : FALSE;
+        TRUE              : semaphore;
+      esac;
+  FAIRNESS
+    running
