@@ -1,0 +1,18 @@
+CL-USER> (require :asdf)
+NIL
+
+CL-USER> (asdf:load-system :demo)
+T
+
+CL-USER> (in-package :com.spike.language.cl.demo)
+#<PACKAGE "COM.SPIKE.LANGUAGE.CL.DEMO">
+
+COM.SPIKE.LANGUAGE.CL.DEMO> (hello-world)
+hello, demo
+"hello, demo"
+
+
+COM.SPIKE.LANGUAGE.CL.DEMO> (in-package :cl-user)
+#<PACKAGE "COMMON-LISP-USER">
+
+COMMON-LISP-USER>

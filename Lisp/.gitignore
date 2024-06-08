@@ -1,0 +1,25 @@
+# VSCode
+.vscode
+
+# Common Lisp
+tempCodeRunnerFile.lisp
+
+# Clojure
+.clj-kondo/
+.lsp/
+public/
+
+# Scheme
+*.ss~
+*.ss#*
+.#*.ss
+tempCodeRunnerFile.ss
+wfreq.out
+outfile
+myfile.ss
+foo.ss
+bar.ss
+
+*.scm~
+*.scm#*
+.#*.scm
