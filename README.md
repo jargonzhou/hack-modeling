@@ -2,9 +2,11 @@
 A collection of materials and actions on hacking modeling methodology.
 
 Actions:
-- [JFLAP](./JFLAP/README.md)
-- [NuSMV](./NuSMV/README.md)
-- [Prolog](./Prolog/README.md)
-- [SemanticWeb](./SemanticWeb/README.md)
-- [SPIN](./SPIN/README.md)
-- [TLA+](./TLAplus/README.md)
+- [Idris](./Idris/README.md): Type-Driven Development, Type Checker.
+- [JFLAP](./JFLAP/README.md): formal languages experimenting, NFA, NPDA, TM, grammars.
+- [Lisp](./Lisp/README.md): LISt Processor, manipulate source code as a data structure.
+- [NuSMV](./NuSMV/README.md): symbolic model checker.
+- [Prolog](./Prolog/README.md): logic programming.
+- [SemanticWeb](./SemanticWeb/README.md): Web of linked data.
+- [SPIN](./SPIN/README.md): formal verification of multi-threaded software applications.
+- [TLA+](./TLAplus/README.md): modeling concurrent and distributed programs and systems.
