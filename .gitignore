@@ -19,8 +19,9 @@ SemanticWeb/**/tdb
 # SPIN
 
 # TLAplus
-TLAplus/**/*.cfg
+# TLAplus/**/*.cfg
 TLAplus/**/*.old
 TLAplus/**/*.out
+TLAplus/**/*.tex
 TLAplus/**/states
 TLAplus/**/*.toolbox

@@ -1,4 +1,6 @@
------------------------------ MODULE EuclidAlg -----------------------------
+------------------------------- MODULE Euclid -------------------------------
+(* PlusCal options (-termination) *)
+
 EXTENDS Naturals, TLC
 
 CONSTANT N
@@ -7,18 +9,36 @@ CONSTANT N
 variables u = 24,
           v \in 1..N,
           v_ini = v;
-          
-
+      
+define
+    gcd(x,y) == CHOOSE i \in 1..x :
+                    /\ x % i = 0
+                    /\ y % i = 0
+                    /\ \A j \in 1..x : /\ x % j = 0
+                                       /\ y % j = 0
+                                       => i >= j
+end define;
+    
 begin 
     while u /= 0 do
         if u < v then u := v || v := u; \* swap
         end if;
         u := u - v;
     end while;
+    assert v = gcd(24, v_ini);
     print <<24, v_ini, "have gcd", v>>;
 end algorithm;*)
-\* BEGIN TRANSLATION (chksum(pcal) = "d7618650" /\ chksum(tla) = "b567e1c7")
+\* BEGIN TRANSLATION (chksum(pcal) = "7906d86c" /\ chksum(tla) = "9997bc3b")
 VARIABLES u, v, v_ini, pc
+
+(* define statement *)
+gcd(x,y) == CHOOSE i \in 1..x :
+                /\ x % i = 0
+                /\ y % i = 0
+                /\ \A j \in 1..x : /\ x % j = 0
+                                   /\ y % j = 0
+                                   => i >= j
+
 
 vars == << u, v, v_ini, pc >>
 
@@ -36,7 +56,9 @@ Lbl_1 == /\ pc = "Lbl_1"
                           ELSE /\ TRUE
                                /\ UNCHANGED << u, v >>
                     /\ pc' = "Lbl_2"
-               ELSE /\ PrintT(<<24, v_ini, "have gcd", v>>)
+               ELSE /\ Assert(v = gcd(24, v_ini), 
+                              "Failure of assertion at line 28, column 5.")
+                    /\ PrintT(<<24, v_ini, "have gcd", v>>)
                     /\ pc' = "Done"
                     /\ UNCHANGED << u, v >>
          /\ v_ini' = v_ini
@@ -52,12 +74,13 @@ Terminating == pc = "Done" /\ UNCHANGED vars
 Next == Lbl_1 \/ Lbl_2
            \/ Terminating
 
-Spec == Init /\ [][Next]_vars
+Spec == /\ Init /\ [][Next]_vars
+        /\ WF_vars(Next)
 
 Termination == <>(pc = "Done")
 
 \* END TRANSLATION 
 =============================================================================
 \* Modification History
-\* Last modified Wed May 15 18:35:47 CST 2024 by zhouj
-\* Created Wed May 15 18:18:53 CST 2024 by zhouj
+\* Last modified Mon May 20 11:16:41 CST 2024 by zhouj
+\* Created Mon May 20 10:58:08 CST 2024 by zhouj

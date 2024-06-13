@@ -58,4 +58,28 @@ StructureKeyValue == [a |-> 1, b |-> <<1, {}>>].b   \* <<1, {}>>
 begin
     x[2].a := x[2].a \union {2}
 end algorithm *)
+\* BEGIN TRANSLATION (chksum(pcal) = "5c7b854e" /\ chksum(tla) = "1f844143")
+VARIABLES x, pc
+
+vars == << x, pc >>
+
+Init == (* Global variables *)
+        /\ x = <<1, [a |-> {}]>>
+        /\ pc = "Lbl_1"
+
+Lbl_1 == /\ pc = "Lbl_1"
+         /\ x' = [x EXCEPT ![2].a = x[2].a \union {2}]
+         /\ pc' = "Done"
+
+(* Allow infinite stuttering to prevent deadlock on termination. *)
+Terminating == pc = "Done" /\ UNCHANGED vars
+
+Next == Lbl_1
+           \/ Terminating
+
+Spec == Init /\ [][Next]_vars
+
+Termination == <>(pc = "Done")
+
+\* END TRANSLATION 
 ====
