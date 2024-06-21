@@ -1,18 +1,30 @@
 ------------------------------ MODULE recycler ------------------------------
 EXTENDS Sequences, Integers, TLC, FiniteSets
 
+BinTypes == {"trash", "recycle"}
+SetsOfFour(set) == set \X set \X set \X set
+Items == [type: BinTypes, size: 1..6]
+
 (*--algorithm recycler
 variables
     capacity = [trash |-> 10, recycle |-> 10],
     bins = [trash |-> {}, recycle |-> {}],
     count = [trash |-> 0, recycle |-> 0],
-    items = <<
-        [type |-> "recycle", size |-> 5],
-        [type |-> "trash", size |-> 5],
-        [type |-> "recycle", size |-> 4],
-        [type |-> "recycle", size |-> 3]
-    >>,
+    items \in SetsOfFour(Items),
     curr = ""; \* helper: current item
+
+define
+    NoBinOverflow == 
+        capacity.trash >= 0 /\ capacity.recycle >= 0
+    CountsMatchUp == 
+        Len(bins.trash) = count.trash /\ Len(bins.recycle) = count.recycle
+
+    Invariant ==
+        /\ capacity.trash >= 0
+        /\ capacity.recycle >= 0
+        /\ Len(bins.trash) = count.trash
+        /\ Len(bins.recycle) = count.recycle    
+end define;
 
 macro add_item(type) begin
     bins[type] := bins[type] \union {curr};
@@ -35,7 +47,7 @@ begin
     assert Cardinality(bins.trash) = count.trash;
     assert Cardinality(bins.recycle) = count.recycle;
 end algorithm; *)
-\* BEGIN TRANSLATION (chksum(pcal) = "3ba4e52" /\ chksum(tla) = "153407a7")
+\* BEGIN TRANSLATION (chksum(pcal) = "8f98d9a4" /\ chksum(tla) = "153407a7")
 VARIABLES capacity, bins, count, items, curr, pc
 
 vars == << capacity, bins, count, items, curr, pc >>

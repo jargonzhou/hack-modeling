@@ -1,4 +1,4 @@
-------------------------------- MODULE dekker -------------------------------
+---- MODULE dekker ----
 EXTENDS TLC, Integers
 CONSTANT Threads \* <- 1..2
 
@@ -40,7 +40,7 @@ begin
 end process;
 
 end algorithm; *)
-\* BEGIN TRANSLATION (chksum(pcal) = "20d643ee" /\ chksum(tla) = "f28a5a6f")
+\* BEGIN TRANSLATION (chksum(pcal) = "95f773a9" /\ chksum(tla) = "f28a5a6f")
 VARIABLES flag, next_thread, pc
 
 (* define statement *)
@@ -130,7 +130,4 @@ Spec == /\ Init /\ [][Next]_vars
 Termination == <>(\A self \in ProcSet: pc[self] = "Done")
 
 \* END TRANSLATION 
-=============================================================================
-\* Modification History
-\* Last modified Sat Aug 20 23:59:04 CST 2022 by zhang
-\* Created Sat Aug 20 23:33:44 CST 2022 by zhang
+====

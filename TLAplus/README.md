@@ -40,3 +40,5 @@ end algorithm;*)
 Actions:
 - [vscode-tlaplus](./vscode-tlaplus/README.md)
 - [Practical TLA+](./PTLAplus/REAME.md)
+- [Specify Systems](./SpecifySystems/README.md)
+- [PlusCal P-Syntax](./PlusCal-p-syntax/README.md)

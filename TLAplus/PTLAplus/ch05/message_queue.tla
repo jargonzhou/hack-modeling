@@ -9,12 +9,14 @@ define
     BoundedQueue == Len(queue) <= MaxQueueSize
 end define;
 
+\* macros cannot contain labels
 \* macro add_to_queue(val) begin
 \*     await Len(queue) < MaxQueueSize; \* make sure queue is not full
 \*     queue := Append(queue, val);
 \* end macro;
 
-procedure add_to_queue(val="") begin
+procedure add_to_queue(val="") 
+begin
     Add:
         await Len(queue) < MaxQueueSize;
         queue := Append(queue, val);

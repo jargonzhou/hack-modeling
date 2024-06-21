@@ -1,4 +1,4 @@
-------------------------------- MODULE cache -------------------------------
+---- MODULE cache ----
 EXTENDS Integers
 CONSTANT ResourceCap, MaxConsumerReq, Actors
 
@@ -40,6 +40,7 @@ process time = "time"
 begin
     Tick:
         resources_left := resource_cap;
+        \* reserved := 0;
         goto Tick;
 end process;
 
@@ -99,8 +100,4 @@ Next == time
 Spec == Init /\ [][Next]_vars
 
 \* END TRANSLATION 
-
-=============================================================================
-\* Modification History
-\* Last modified Fri Aug 19 17:40:52 CST 2022 by zhoujiagen
-\* Created Fri Aug 19 17:17:56 CST 2022 by zhoujiagen
+====

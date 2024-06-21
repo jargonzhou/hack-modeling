@@ -35,7 +35,7 @@ begin
     assert Cardinality(bins.trash) = count.trash;
     assert Cardinality(bins.recycle) = count.recycle;
 end algorithm; *)
-\* BEGIN TRANSLATION (chksum(pcal) = "3ba4e52" /\ chksum(tla) = "153407a7")
+\* BEGIN TRANSLATION (chksum(pcal) = "8f98d9a4" /\ chksum(tla) = "153407a7")
 VARIABLES capacity, bins, count, items, curr, pc
 
 vars == << capacity, bins, count, items, curr, pc >>
