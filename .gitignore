@@ -1,5 +1,10 @@
 .vscode
 
+# Idris
+Idris/build
+Idris/**/*.ibc
+Idris/**/build
+
 # JFLAP
 JFLAP/Tutorial_JFLAP_Files.zip
 JFLAP/Tutorial_JFLAP_Files
@@ -25,3 +30,4 @@ TLAplus/**/*.out
 TLAplus/**/*.tex
 TLAplus/**/states
 TLAplus/**/*.toolbox
+TLAplus/vscode-tlaplus/out.csv
