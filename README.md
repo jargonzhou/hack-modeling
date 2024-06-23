@@ -2,7 +2,8 @@
 A collection of materials and actions on hacking modeling methodology.
 
 Actions:
-- [Idris](./Idris/README.md): Type-Driven Development, Type Checker.
+- [Types](./Types/README.md)
+  - [Idris](./Idris/README.md): Type-Driven Development, Type Checker.
 - [JFLAP](./JFLAP/README.md): formal languages experimenting, NFA, NPDA, TM, grammars.
 - [Lisp](./Lisp/README.md): LISt Processor, manipulate source code as a data structure.
 - [NuSMV](./NuSMV/README.md): symbolic model checker.
