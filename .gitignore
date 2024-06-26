@@ -32,3 +32,12 @@ TLAplus/vscode-tlaplus/out.csv
 Types/Idris/build
 Types/Idris/**/*.ibc
 Types/Idris/**/build
+## OCaml
+Types/OCaml/**/_build
+Types/OCaml/**/*.cmi
+Types/OCaml/**/*.cmo
+Types/OCaml/oftvb/stats
+Types/OCaml/oftvb/iotest
+Types/OCaml/oftvb/files
+Types/OCaml/oftvb/files.txt
+Types/OCaml/**/*.out
