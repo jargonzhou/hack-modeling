@@ -1,0 +1,90 @@
+# ./ex_wc_file ex_wc_file.l
+
+      29      45     466
+
+# ./ex_wc_files ex_wc_file.l ex_wc_files.l runs.txt
+
+      29      45     466 ex_wc_file.l
+      51     101     964 ex_wc_files.l
+       3       7      54 runs.txt
+      83     153    1484 total
+
+# ./ex_c_include data_c_impl.c
+
+[       data_c_impl.c]    1 /* data implementation file */
+[       data_c_impl.c]    2
+[     data_c_header.h]    1 /* data header file. */
+[     data_c_header.h]    2 int add(int a, int b);
+[     data_c_header.h]    3
+[     data_c_header.h]    4 int sub(int a, int b)
+[     data_c_header.h]    5 {
+[     data_c_header.h]    6     return a - b;
+[     data_c_header.h]    7 }
+[       data_c_impl.c]    4
+[       data_c_impl.c]    5 int add(int a, int b)
+[       data_c_impl.c]    6 {
+[       data_c_impl.c]    7     return a + b;
+[       data_c_impl.c]    8 }
+[       data_c_impl.c]    9
+[       data_c_impl.c]   10 int main(int argc, char **argv)
+[       data_c_impl.c]   11 {
+[       data_c_impl.c]   12     printf("%d\n", add(1,2));
+[       data_c_impl.c]   13     printf("%d\n", sub(2,1));
+[       data_c_impl.c]   14
+[       data_c_impl.c]   15     return 0;
+[       data_c_impl.c]   16 }
+
+# ./ex_word_concordance ex_word_concordance.l
+
+      FILE ex_word_concordance.l:42
+    addref ex_word_concordance.l:30
+      argc ex_word_concordance.l:34 36 41
+      argv ex_word_concordance.l:34 42 44 47
+      case ex_word_concordance.l:1
+      char ex_word_concordance.l:34
+    common ex_word_concordance.l:9
+curfilename ex_word_concordance.l:30 37 47
+      else ex_word_concordance.l:31 40
+everything ex_word_concordance.l:31
+         f ex_word_concordance.l:42 43 49 52
+    fclose ex_word_concordance.l:52
+     fopen ex_word_concordance.l:42
+         h ex_word_concordance.l:4
+         i ex_word_concordance.l:35 41 42 47
+        if ex_word_concordance.l:36 43
+    ignore ex_word_concordance.l:28 31
+   include ex_word_concordance.l:4
+insensitive ex_word_concordance.l:1
+       int ex_word_concordance.l:34 35
+      main ex_word_concordance.l:34
+         n ex_word_concordance.l:31
+ nodefault ex_word_concordance.l:1
+  noyywrap ex_word_concordance.l:1
+    option ex_word_concordance.l:1
+    perror ex_word_concordance.l:44
+ printrefs ex_word_concordance.l:56
+         r ex_word_concordance.l:42
+    return ex_word_concordance.l:45
+         s ex_word_concordance.l:30
+      skip ex_word_concordance.l:9
+     stdin ex_word_concordance.l:37
+       sym ex_word_concordance.l:4
+         t ex_word_concordance.l:30
+       tbl ex_word_concordance.l:4
+     words ex_word_concordance.l:9
+     yylex ex_word_concordance.l:39 51
+  yylineno ex_word_concordance.l:1 30 38 50
+ yyrestart ex_word_concordance.l:49
+    yytext ex_word_concordance.l:30
+         z ex_word_concordance.l:30
+
+# ./ex_c_cross_reference data_c_impl.c
+
+         a data_c_header.h:2* 4* 6 data_c_impl.c:5* 7
+       add data_c_header.h:2* data_c_impl.c:5* 12
+      argc data_c_impl.c:10*
+      argv data_c_impl.c:10*
+         b data_c_header.h:2* 4* 6 data_c_impl.c:5* 7
+      main data_c_impl.c:10*
+    printf data_c_impl.c:12 13
+       sub data_c_header.h:4* data_c_impl.c:13

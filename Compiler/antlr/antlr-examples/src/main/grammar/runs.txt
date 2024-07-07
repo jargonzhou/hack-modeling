@@ -1,0 +1,6 @@
+# DynScope.g4
+
+$ grun.bat DynScope prog DynScope.txt
+symbols=[i, x]
+undefined variable: x
+symbols=[i, j]

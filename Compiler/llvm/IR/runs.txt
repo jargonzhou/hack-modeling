@@ -1,0 +1,16 @@
+# sum.c
+
+使用Clang生成bitcode文件:
+clang sum.c -emit-llvm -c -o sum.bc
+
+使用Clang生成汇编文件:
+clang sum.c -emit-llvm -S -c -o sum.ll
+
+汇编汇编文件, 生成bitcode文件:
+llvm-as sum.ll -o sum.bc
+
+反汇编:
+llvm-dis sum.bc -o sum.ll
+
+从IR module中提取IR functions, globals或删除globals:
+llvm-extract -func=sum sum.bc -o sum-fn.bc

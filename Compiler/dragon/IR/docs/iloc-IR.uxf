@@ -1,0 +1,65 @@
+<diagram program="umletino" version="14.4.0-SNAPSHOT"><zoom_level>10</zoom_level><help_text></help_text><element><id>UMLClass</id><coordinates><x>750</x><y>38</y><w>90</w><h>20</h></coordinates><panel_attributes>Iterable&lt;Op&gt;</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>750</x><y>78</y><w>90</w><h>80</h></coordinates><panel_attributes>/Instr/
+--
+line: int
+label: Label
+prog: Program
+bg=green</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>780</x><y>48</y><w>30</w><h>50</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;10;30</additional_attributes></element><element><id>UMLClass</id><coordinates><x>220</x><y>328</y><w>130</w><h>50</h></coordinates><panel_attributes>/Operand/
+--
+type: Operand.Type
+bg=green</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>150</x><y>498</y><w>130</w><h>90</h></coordinates><panel_attributes>Num
+--
+value: int
+name: String
+label: Label
+kind: Num.NumKind</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>300</x><y>498</y><w>90</w><h>40</h></coordinates><panel_attributes>Reg
+--
+name: String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>430</x><y>498</y><w>90</w><h>40</h></coordinates><panel_attributes>Str
+--
+text: String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>40</x><y>498</y><w>90</w><h>40</h></coordinates><panel_attributes>Label
+--
+value: String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>600</x><y>218</y><w>130</w><h>70</h></coordinates><panel_attributes>Op
+--
+opCode: OpCode
+args: List&lt;Operand&gt;
+comment: String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>850</x><y>218</y><w>100</w><h>40</h></coordinates><panel_attributes>OpList
+--
+opList: List&lt;Op&gt;</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>90</x><y>58</y><w>210</w><h>170</h></coordinates><panel_attributes>Program
+--
+instrList: List&lt;Instr&gt;
+opList: List&lt;Op&gt;
+labelMap: Label =&gt; Integer
+symbMap: Num =&gt; Integer
+--
+addInstr(Instr)
+setSymb(Num, int)
+check()
+toString()
+prettyPrint()
+bg=green</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>670</x><y>148</y><w>140</w><h>90</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>120;10;120;40;10;40;10;70</additional_attributes></element><element><id>Relation</id><coordinates><x>740</x><y>148</y><w>170</w><h>90</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>50;10;50;40;10;40;150;40;150;70</additional_attributes></element><element><id>Relation</id><coordinates><x>70</x><y>368</y><w>230</w><h>150</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>210;10;210;80;10;80;10;130</additional_attributes></element><element><id>Relation</id><coordinates><x>210</x><y>368</y><w>90</w><h>150</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>70;10;70;80;10;80;10;130</additional_attributes></element><element><id>Relation</id><coordinates><x>270</x><y>368</y><w>90</w><h>150</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;80;70;80;70;130</additional_attributes></element><element><id>Relation</id><coordinates><x>270</x><y>368</y><w>220</w><h>150</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;80;200;80;200;130</additional_attributes></element><element><id>UMLClass</id><coordinates><x>850</x><y>318</y><w>90</w><h>70</h></coordinates><panel_attributes>OpClaz
+--
+NORMAL =&gt;
+CONTROL -&gt;
+COMMENT
+bg=#3c7a00</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>600</x><y>318</y><w>180</w><h>110</h></coordinates><panel_attributes>OpCode
+--
+claz: OpClaz
+sourceSig: List&lt;Operand.Type&gt;
+targetSig: List&lt;Operand.Type&gt;
+--
+nop
+add
+...
+bg=#3c7a00</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>380</x><y>328</y><w>120</w><h>90</h></coordinates><panel_attributes>Operand.Type
+--
+REG
+NUM
+LABEL
+STR
+bg=#3c7a00
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>150</x><y>608</y><w>120</w><h>70</h></coordinates><panel_attributes>Num.NumKind
+--
+LIT
+SYMB: @xxx
+LAB: #xxx
+bg=#3c7a00
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>290</x><y>88</y><w>480</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;460;10</additional_attributes></element><element><id>Relation</id><coordinates><x>640</x><y>278</y><w>30</w><h>60</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;10;40</additional_attributes></element><element><id>Relation</id><coordinates><x>770</x><y>318</y><w>100</w><h>30</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;80;10</additional_attributes></element><element><id>Relation</id><coordinates><x>340</x><y>328</y><w>60</w><h>30</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;40;10</additional_attributes></element><element><id>Relation</id><coordinates><x>720</x><y>218</y><w>150</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>130;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>180</x><y>578</y><w>30</w><h>50</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;30;10;10</additional_attributes></element></diagram>
