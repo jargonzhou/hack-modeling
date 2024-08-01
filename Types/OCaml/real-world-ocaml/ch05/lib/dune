@@ -1,0 +1,7 @@
+(library
+ (public_name ch05)
+ (name ch05)
+ (libraries base core core_unix stdio re)
+ (inline_tests)
+ (preprocess
+  (pps ppx_inline_test ppx_assert)))

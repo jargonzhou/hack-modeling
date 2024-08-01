@@ -1,0 +1,5 @@
+(executable
+ (public_name ch19)
+ (name main)
+ (libraries ch19 core core_unix.command_unix)
+ (modes byte exe))

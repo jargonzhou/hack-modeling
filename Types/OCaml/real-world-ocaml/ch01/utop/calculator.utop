@@ -1,0 +1,28 @@
+# open Base;;
+# 3 + 4;;
+- : int = 7
+# 8 / 3;;
+- : int = 2
+# 3.5 +. 6.;;
+- : float = 9.5
+# 30_000_000 / 300_000;;
+- : int = 100
+# 3 * 5 > 14;;
+- : bool/3 = true
+# let x = 3 + 4;;
+val x : int = 7
+# let y = x + x;;
+val y : int = 14
+# let x7 = 3 + 4;;
+val x7 : int = 7
+# let x_plus_y = x * y;;
+val x_plus_y : int = 98
+# let x' = x + 1;;
+val x' : int = 8
+# let Seven = 3 + 4;;
+Error: Unbound constructor Seven
+# let 7x = 7;;
+Error: Unknown modifier x for literal 7x
+# let x-plus-y = x + y;;
+Error: Syntax error
+# #utop_save "utop/calculator.utop";;

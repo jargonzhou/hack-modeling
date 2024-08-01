@@ -1,0 +1,9 @@
+(library
+ (name ch19)
+ (modules parser lexer json)
+ (libraries core))
+
+(menhir
+ (modules parser))
+
+(ocamllex lexer)

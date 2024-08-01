@@ -1,0 +1,5 @@
+(library
+ (name lexer_parser))
+
+(ocamllex lexer)
+(ocamlyacc parser)
