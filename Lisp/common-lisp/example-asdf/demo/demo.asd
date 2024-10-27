@@ -1,5 +1,5 @@
 (defpackage :com.spike.cl.demo-system
-  (:use :asdf :cl))
+  (:use :cl :asdf :uiop))
 (in-package :com.spike.cl.demo-system)
 
 (defsystem demo
@@ -11,5 +11,18 @@
   :description "<description>"
   :long-description "<long-description>"
   :components
-  ((:file "packages")
-   (:file "demo" :depends-on ("packages"))))
+  ((:file "packages" :depends-on (inner))
+   (:file "demo" :depends-on ("packages"))
+   ; modules
+   (:module inner
+            :components ((:file "inner" :depends-on ("packages"))
+                         (:file "packages"))))
+  :in-order-to ((test-op (test-op demo/test))))
+
+(defsystem demo/test
+  :depends-on (demo "fiveam")
+  :pathname "t/"
+  :components
+  ((:file "tests"))
+  :perform (test-op (o c)
+                    (symbol-call :fiveam :run! 'demo-suite)))
