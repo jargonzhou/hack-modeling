@@ -30,3 +30,4 @@ distribution for more information.
 ## Tools
 
 - [Alive: The Average Lisp VSCode Environment](https://github.com/nobody-famous/alive)
+- [Emacs](https://www.gnu.org/software/emacs/)

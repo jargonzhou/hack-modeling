@@ -1,7 +1,17 @@
 # ASDF
 
-Load `demo` system:
+```shell
+├── demo.asd            # ASDF system definition
+├── demo.lisp
+├── inner               # inner package
+│   ├── inner.lisp
+│   └── packages.lisp
+├── packages.lisp       # package
+└── t
+    └── tests.lisp      # tests
+```
 
+Load `demo` system:
 ```shell
 ✗ CURRENT_DIR=`pwd`       
 ✗ SYSTEM_NAME=demo
@@ -16,4 +26,26 @@ Load `demo` system:
 * (hello-world)
 hello, demo
 "hello, demo"
+```
+
+Tests with [FiveAM](https://github.com/lispci/fiveam):
+```shell
+* (asdf:test-system "demo")
+
+* (asdf:test-system "demo")
+Running test SIMPLE-MATHS .
+ Did 1 check.
+    Pass: 1 (100%)
+    Skip: 0 ( 0%)
+    Fail: 0 ( 0%)
+
+
+Running test ADDTEST .
+ Did 1 check.
+    Pass: 1 (100%)
+    Skip: 0 ( 0%)
+    Fail: 0 ( 0%)
+
+ Didn't run anything...huh?
+T
 ```
