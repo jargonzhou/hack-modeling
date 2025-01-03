@@ -10,6 +10,7 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<version.antlr>4.13.2</version.antlr>
 	</properties>
 
 	<dependencies>
@@ -39,8 +40,10 @@
 		<!-- ANTLR -->
 		<dependency>
 			<groupId>org.antlr</groupId>
-			<artifactId>antlr4-runtime</artifactId>
-			<version>4.7.1</version>
+<!--			<artifactId>antlr4-runtime</artifactId>-->
+			<artifactId>antlr4</artifactId>
+			<!-- <version>4.7.1</version> -->
+			<version>${version.antlr}</version>
 		</dependency>
 
 		<!-- JSON-->
@@ -95,7 +98,7 @@
 			<plugin>
 				<groupId>org.antlr</groupId>
 				<artifactId>antlr4-maven-plugin</artifactId>
-				<version>4.7.1</version>
+				<version>${version.antlr}</version>
 				<executions>
 					<execution>
 						<id>antlr</id>
