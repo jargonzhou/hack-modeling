@@ -1,0 +1,59 @@
+options {
+    LOOKAHEAD = 1;
+}
+
+// Expected output:
+//The number is: 8885551212
+PARSER_BEGIN(PhoneParser)
+package com.spike.javacc.phone_javacode;
+import java.io.*;
+
+public class PhoneParser {
+    public static void main(String[] args){
+      StringReader sr = new StringReader("888-555-1212");
+      PhoneParser p = new PhoneParser(sr);
+      try {
+          StringBuffer sb = p.PhoneNumber();
+          System.out.println("The number is: " + sb);
+      } catch (ParseException e) {
+          e.printStackTrace();
+      }
+    }
+}
+PARSER_END(PhoneParser)
+
+TOKEN : {
+    <FOUR_DIGITS : (<DIGITS>){4} >
+    | <THREE_DIGITS : (<DIGITS>){3} >
+    | <#DIGITS : ["0"-"9"] >
+}
+
+// BNF产生式
+// 见PhoneNumber中相应方法.
+StringBuffer PhoneNumber() :
+// 句法动作
+{
+    StringBuffer number = new StringBuffer();
+    String areaCodeResult;
+}
+// 展开项
+{
+//    <THREE_DIGITS> { number.append(token.image); } // 句法动作
+    areaCodeResult=AreaCode()     { number.append(areaCodeResult); }
+    "-"
+    <THREE_DIGITS>                { number.append(token.image); }
+    "-"
+    <FOUR_DIGITS>                 { number.append(token.image); }
+    <EOF>                         { return number; }
+}
+
+// Java代码产生式
+JAVACODE
+String AreaCode()
+{
+    Token _token = getNextToken();
+    if (_token.kind != THREE_DIGITS) {
+        throw new ParseException("Expected an area code.");
+    }
+    return _token.image;
+}

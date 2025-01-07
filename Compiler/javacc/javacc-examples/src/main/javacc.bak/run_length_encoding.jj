@@ -1,0 +1,47 @@
+// Example 2.37. run length encoding in 'Generating Parsers with JavaCC'
+
+options {
+    LOOKAHEAD = 1;
+}
+
+PARSER_BEGIN(RunLengthEncoding)
+package com.spike.javacc.run_length_encoding;
+import java.io.*;
+
+public class RunLengthEncoding {
+
+}
+PARSER_END(RunLengthEncoding)
+
+// Expected output:
+//Found token: 2:hi
+//Found token: 5:there
+TOKEN_MGR_DECLS : {
+    public static void main(String[] args) {
+        StringReader sr = new StringReader("2:hi 5:there");
+        SimpleCharStream scs = new SimpleCharStream(sr);
+        RunLengthEncodingTokenManager mgr = new RunLengthEncodingTokenManager(scs);
+        for (Token t = mgr.getNextToken(); t.kind != EOF; t = mgr.getNextToken()) {
+            debugStream.println("Found token: " + t.image);
+        }
+    }
+}
+
+SKIP : {
+    " "
+}
+
+TOKEN : {
+    <RL_STR : ["0"-"9"] ":">
+    {
+        // limitation: first digit
+        int len = Integer.parseInt(matchedToken.image.substring(0,1));
+        try {
+            for (int i = 0; i < len; i++) {
+                matchedToken.image = matchedToken.image + input_stream.readChar();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}

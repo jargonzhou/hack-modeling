@@ -1,0 +1,47 @@
+// Example 4.18. A Definite Node Descriptor in 'Generating Parsers with JavaCC'
+options {
+    LOOKAHEAD = 1;
+
+    MULTI = true;
+}
+
+PARSER_BEGIN(LetterParser)
+package com.spike.javacc.jjtree.letter;
+
+import java.io.*;
+
+public class LetterParser {
+   public static void main(String[] args) {
+//        StringReader sr = new StringReader("ABCC");
+        StringReader sr = new StringReader("ABCCC");
+        LetterParser p = new LetterParser(sr);
+        try {
+            SimpleNode e = p.A();
+            e.dump(">");
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+    }
+}
+PARSER_END(LetterParser)
+
+SimpleNode A() :
+{}
+{
+    "A"
+    B()
+    {return jjtThis;}
+}
+
+void B() #B(2) :
+{}
+{
+    "B"
+    (C())+
+}
+
+void C() :
+{}
+{
+    "C"
+}

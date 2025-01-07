@@ -1,0 +1,129 @@
+// Example 11.2. Parsing Apache Logs in 'Generating Parsers with JavaCC'
+
+options {
+    STATIC = false;
+}
+
+PARSER_BEGIN(ApacheLog)
+package com.spike.javacc.examples.apache_log;
+
+import java.util.*;
+public class ApacheLog {
+    private boolean debug = true;
+    private Set<Integer> skipLines = new HashSet<>();
+
+    private AgentCollector collector;
+    public void setAgentCollector(AgentCollector collector) {
+        this.collector = collector;
+    }
+
+    public Set<Integer> getSkipLines() {
+        return skipLines;
+    }
+}
+PARSER_END(ApacheLog)
+
+SKIP : {
+//    " " | "\r" | "\n" | "\r\n"
+    " "
+}
+
+TOKEN : {
+    <QUOTED_DATA : "\"" (~["\"", "\r", "\n"])* "\"">
+    | <BRACKETED_DATA : "[" (~["]"])+ "]">
+    | <DATA : (~["\r","\n", " "])+>
+    | <EOL : "\r" | "\n" | "\r\n">
+}
+
+void Log() :
+{}
+{
+    (Entry())*
+}
+
+void Entry() :
+{}
+{
+    try {
+//    (Hostname())*
+    RemoteIP() RemoteLogname() RemoteUsername() Date()
+    RequestMethodURLVersion() ResponseCode() ResponseLength() Referer() UserAgent()
+    (<EOL>|<EOF>)
+        {
+            if (debug) System.out.println();
+        }
+    } catch (ParseException e) {
+        System.out.println("SKIP: " + e.getMessage());
+        skipThisLine();
+    }
+}
+
+void Hostname():
+{}
+{
+    <DATA>
+}
+
+void RemoteIP():
+{Token t;}
+{
+    t=<DATA> { if (debug) System.out.print("[" + t.beginLine + "] RemoteIP: " + t.image);}
+}
+void RemoteLogname():
+{Token t;}
+{
+    t=<DATA> { if (debug) System.out.print(" RemoteLogname: " + t.image);}
+}
+void RemoteUsername():
+{Token t;}
+{
+    t=<DATA> { if (debug) System.out.print(" RemoteUsername: " + t.image);}
+}
+void Date():
+{Token t;}
+{
+    t=<BRACKETED_DATA> { if (debug) System.out.print(" Date: " + t.image);}
+}
+void RequestMethodURLVersion():
+{Token t;}
+{
+    t=<QUOTED_DATA> { if (debug) System.out.print(" RequestMethodURLVersion: " + t.image);}
+}
+void ResponseCode():
+{Token t;}
+{
+    t=<DATA> { if (debug) System.out.print(" ResponseCode: " + t.image);}
+}
+void ResponseLength():
+{Token t;}
+{
+    t=<DATA> { if (debug) System.out.print(" ResponseLength: " + t.image);}
+}
+void Referer():
+{Token t;}
+{
+    t=<QUOTED_DATA> { if (debug) System.out.print(" Referer: " + t.image);}
+}
+void UserAgent():
+{Token t;}
+{
+    t=<QUOTED_DATA>
+    {
+        if (debug) System.out.print(" UserAgent: " + t.image);
+        collector.addUserAgentHit(t.image);
+    }
+}
+
+
+JAVACODE
+String skipThisLine() {
+    Token t;
+    do {
+        t = getNextToken();
+        skipLines.add(t.beginLine);
+        if (debug) {
+            System.out.println("skip " + t.image );
+        }
+    } while (t.kind != EOL && t.kind != EOF);
+    return t.image;
+}

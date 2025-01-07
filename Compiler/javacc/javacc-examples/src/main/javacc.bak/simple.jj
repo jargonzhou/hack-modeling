@@ -1,11 +1,14 @@
+// Example 1.1. A simple grammar in 'Generating Parsers with JavaCC'
 // 选项
 options {
-  JDK_VERSION = "1.8";
+    JDK_VERSION = "1.8";
+    LOOKAHEAD = 1;
 }
 
+// Expected output:
+//Found a 'a'!
 // 解析器类定义
 PARSER_BEGIN(SimpleParser)
-
 package com.spike.javacc.simple;
 import java.io.*;
 
@@ -18,7 +21,6 @@ public class SimpleParser {
     parser.A();
   }
 }
-
 PARSER_END(SimpleParser)
 
 // 词法描述
@@ -27,7 +29,7 @@ TOKEN :
   < A : "a" >
 }
 
-// 语法描述
+// 句法描述
 void A() :
 {}
 {

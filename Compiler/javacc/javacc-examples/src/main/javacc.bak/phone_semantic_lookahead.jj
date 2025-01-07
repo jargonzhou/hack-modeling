@@ -1,0 +1,72 @@
+options {
+    STATIC = false;
+}
+
+// Expected output:
+//The number is: 1231212
+//The number is: 3211212
+PARSER_BEGIN(PhoneParser)
+package com.spike.javacc.phone_semantic_lookahead;
+import java.io.*;
+
+public class PhoneParser {
+    public static void main(String[] args) {
+        parse("123-1212");
+        parse("321-1212");
+    }
+
+    private static void parse(String input) {
+        StringReader sr = new StringReader(input);
+        PhoneParser p = new PhoneParser(sr);
+        try {
+            StringBuffer sb = p.PhoneNumber();
+            System.out.println("The number is: " + sb);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+    }
+}
+PARSER_END(PhoneParser)
+
+TOKEN : {
+    <FOUR_DIGITS : (<DIGITS>){4} >
+    | <THREE_DIGITS : (<DIGITS>){3} >
+    | <#DIGITS : ["0"-"9"] >
+}
+
+StringBuffer PhoneNumber() :
+{
+    StringBuffer number = new StringBuffer();
+}
+{
+    // 语义预看
+    (
+    LOOKAHEAD({getToken(1).image.equals("123")})
+    KeysvilleNumber(number)
+    | FarmvilleNumber(number)
+    )
+    <EOF> { return number; }
+}
+
+void AreaCode(StringBuffer sb) :
+{}
+{
+    <THREE_DIGITS> { sb.append(token.image); }
+}
+
+// 123-xxxx
+void KeysvilleNumber(StringBuffer sb) :
+{}
+{
+    AreaCode(sb)
+    "-"
+    <FOUR_DIGITS> { sb.append(token.image); }
+}
+
+void FarmvilleNumber(StringBuffer sb) :
+{}
+{
+    AreaCode(sb)
+    "-"
+    <FOUR_DIGITS>  { sb.append(token.image); }
+}

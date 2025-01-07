@@ -1,0 +1,65 @@
+// Example 11.11. Evaluating Postfix in 'Generating Parsers with JavaCC'
+
+options {
+    STATIC = false;
+    MULTI = true;
+    VISITOR = true;
+}
+
+PARSER_BEGIN(PostfixExpr)
+package com.spike.javacc.examples.postfix_expr;
+import java.io.*;
+
+public class PostfixExpr {
+    public static void main(String[] args){
+        // 2 + 3 - 4
+        StringReader sr = new StringReader("2 3 + 4 -");
+        PostfixExpr p = new PostfixExpr(sr);
+        try{
+            ASTExpression e = p.Expression();
+            e.dump("");
+            System.out.println();
+            PostfixExprCalcVisitor v = new PostfixExprCalcVisitor();
+            e.jjtAccept(v, null);
+            System.out.println("Result is " + v.stack.pop());
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+    }
+}
+PARSER_END(PostfixExpr)
+
+SKIP : {
+    " "
+}
+
+TOKEN : {
+    <PLUS: "+">
+    | <MINUS : "-">
+    | <DIGITS: (["0"-"9"])+>
+}
+
+ASTExpression Expression() :
+{}
+{
+    Factor() (Term() Operator())*
+    {return jjtThis;}
+}
+
+void Term() :
+{}
+{
+    LOOKAHEAD(2) Expression() | Factor()
+}
+
+void Factor() :
+{Token t;}
+{
+    t=<DIGITS> {jjtThis.jjtSetValue(Integer.parseInt(t.image));}
+}
+
+void Operator() :
+{}
+{
+    "+" {jjtThis.jjtSetValue(true);}| "-"
+}

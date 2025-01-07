@@ -1,0 +1,110 @@
+// Example 7.1 The Logo Tokenizer in 'Generating Parsers with JavaCC'
+
+options {
+    LOOKAHEAD = 1;
+
+    STATIC = false;
+}
+
+PARSER_BEGIN(Logo)
+package com.spike.javacc.error.logo;
+
+import java.io.*;
+
+public class Logo {
+    public static void main(String[] args){
+//       StringReader sr = new StringReader("FORWARD 20\nRIGHT 120\nFORWARD 20\n");
+      StringReader sr = new StringReader("FORWARD 20\nRIGHT RIGHT 120\nFORWARD 20\n");
+      Logo p = new Logo(sr);
+        try {
+            p.Program();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+    }
+}
+PARSER_END(Logo)
+TOKEN_MGR_DECLS : {
+    public static void main(String[] args) throws Exception {
+//        StringReader sr = new StringReader("FORWARD 20\nRIGHT 120\nFORWARD 20");
+        StringReader sr = new StringReader("FORWARD 20\nRIHGT 120\nFORWARD 20");
+        SimpleCharStream scs = new SimpleCharStream(sr);
+        LogoTokenManager mgr = new LogoTokenManager(scs);
+        while (true) {
+            try {
+                if (readAllTokens(mgr).kind == EOF) {
+                    break;
+                }
+            } catch (TokenMgrError e) {
+                mgr.debugStream.println(e.getMessage());
+                recoverTo(mgr, ' ');
+            }
+        }
+    }
+
+    private static Token readAllTokens(LogoTokenManager mgr) {
+        Token t;
+        for (t = mgr.getNextToken(); t.kind != EOF; t = mgr.getNextToken()) {
+            String loc = " starting at " + t.beginLine + "," + t.beginColumn;
+            loc += " and ending at" + t.endLine + "," + t.endColumn;
+            mgr.debugStream.println("Found a " + LogoConstants.tokenImage[t.kind] + ": " + t.image + loc);
+        }
+        return t;
+    }
+    private static void recoverTo(LogoTokenManager mgr, char delimiter) throws IOException {
+        mgr.debugStream.println("Skipping ahread...");
+        int skipped = 0;
+        while (mgr.input_stream.readChar() != delimiter) {
+            skipped++;
+        }
+        mgr.debugStream.println("Skipped " + skipped + " characters");
+    }
+}
+
+
+SKIP : {
+    " "
+}
+
+TOKEN : {
+    <FORWARD : "FORWARD" >
+    | <RIGHT : "RIGHT" >
+    | <DIGITS : (["1"-"9"])+ (["0"-"9"])* >
+    | <EOL : "\r" | "\n" | "\r\n">
+}
+
+void Program() :
+{}
+{
+    // deep error recovery
+    (
+        try {
+            Move() { System.out.println("MOVE");}
+            | Turn() {System.out.println("TURN");}
+        } catch (ParseException e) {
+            System.out.println("Skip due to: " + e.getMessage());
+            skipThisCommand();
+        }
+    )+
+}
+
+void Move() :
+{}
+{
+    <FORWARD> <DIGITS> <EOL>
+}
+
+void Turn() :
+{}
+{
+    <RIGHT> <DIGITS> <EOL>
+}
+
+JAVACODE
+String skipThisCommand() {
+    Token t;
+    do {
+        t = getNextToken();
+    } while (t.kind != EOL);
+    return t.image;
+}

@@ -1,0 +1,76 @@
+// Example 4.1. A grammar for simple expressions in 'Generating Parsers with JavaCC'
+options {
+    LOOKAHEAD = 1;
+
+    MULTI = true;
+    VISITOR = true;
+//    TRACK_TOKENS = true;
+
+}
+
+PARSER_BEGIN(Calculator)
+package com.spike.javacc.jjtree.calculator;
+import com.spike.javacc.jjtree.CalculatorSumVisitor;
+import java.io.*;
+
+public class Calculator {
+    public static void main(String[] args) {
+        StringReader sr = new StringReader("1 + 2");
+        Calculator c = new Calculator(sr);
+        try {
+            SimpleNode e = c.Expression();
+            CalculatorSumVisitor v = new CalculatorSumVisitor();
+            dump(e, ">");
+            e.jjtAccept(v, null);
+            System.out.println("Sum is: " + v.sum);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void dump(SimpleNode sn, String prefix) {
+        System.out.println(prefix + CalculatorTreeConstants.jjtNodeName[sn.getId()] + ": " + sn.jjtGetValue());
+        int cc = sn.jjtGetNumChildren();
+        if (cc > 0) {
+            for (int i = 0; i < cc; i++) {
+                SimpleNode n = (SimpleNode) sn.jjtGetChild(i);
+                if (n != null) {
+                    dump(n, prefix + " ");
+                }
+            }
+        }
+    }
+}
+PARSER_END(Calculator)
+
+SKIP : {
+    " "
+}
+
+TOKEN : {
+    <DIGITS: (["0"-"9"])+>
+    | <PLUS : "+">
+}
+
+// jjtThis reference to current JJTree node
+SimpleNode Expression() :
+{}
+{
+    Operator()
+    {return jjtThis;}
+}
+
+// node descriptor: #NewNodeName
+void Operator() #Op :
+{Token t;}
+{
+    Operand()
+    t="+" {jjtThis.jjtSetValue(t.image);}
+    Operand()
+}
+
+void Operand() :
+{Token t;}
+{
+    t=<DIGITS> {jjtThis.jjtSetValue(t.image);}
+}

@@ -1,0 +1,35 @@
+// Example 2.36. Transforming a token with a lexical action in 'Generating Parsers with JavaCC'
+options {
+    LOOKAHEAD = 1;
+//    BUILD_PARSER = false;
+}
+
+PARSER_BEGIN(LexicalAction)
+package com.spike.javacc.lexical_action;
+import java.io.*;
+
+public class LexicalAction {
+
+}
+PARSER_END(LexicalAction)
+
+// Expected output:
+//Found token: AB
+TOKEN_MGR_DECLS : {
+    public static void main(String[] args) {
+        StringReader sr = new StringReader("A");
+        SimpleCharStream scs = new SimpleCharStream(sr);
+        LexicalActionTokenManager mgr = new LexicalActionTokenManager(scs);
+        for (Token t = mgr.getNextToken(); t.kind != EOF; t = mgr.getNextToken()) {
+            debugStream.println("Found token: " + t.image);
+        }
+    }
+}
+
+TOKEN : {
+    <A : "A">
+    // 词法动作: see *TokenManager#TokenLexicalActions(Token matchedToken)
+    {
+        matchedToken.image = image.append("B").toString();
+    }
+}

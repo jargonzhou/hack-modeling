@@ -1,0 +1,32 @@
+options {
+    LOOKAHEAD = 1;
+}
+
+PARSER_BEGIN(PhoneParser)
+package com.spike.javacc.jtb.phone;
+
+public class PhoneParser {
+    public static void main(String[] args){
+
+    }
+}
+PARSER_END(PhoneParser)
+
+SKIP : { " " }
+TOKEN : {
+    <FOUR_DIGITS : (<DIGIT><DIGIT><DIGIT><DIGIT>)>
+    | <THREE_DIGITS : (<DIGIT><DIGIT><DIGIT>)>
+    | <#DIGIT : ["0"-"9"]>
+}
+
+void PhoneList() :
+{}
+{
+    (PhoneNumber())+
+}
+
+void PhoneNumber() :
+{}
+{
+    <THREE_DIGITS> "-" <THREE_DIGITS> "-" <FOUR_DIGITS>
+}

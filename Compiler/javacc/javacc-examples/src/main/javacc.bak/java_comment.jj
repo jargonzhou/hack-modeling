@@ -1,0 +1,62 @@
+// Example 2.50 Parseing Java multi-line comments with lexical states in 'Generating Parsers with JavaCC'
+options {
+    LOOKAHEAD = 1;
+}
+
+PARSER_BEGIN(JavaComment)
+package com.spike.javacc.java_comment;
+import java.io.*;
+
+public class JavaComment {
+
+}
+PARSER_END(JavaComment)
+
+// Expected output:
+//Found token: /* This is a
+//multi-line Java comment. */int
+//Found token: a
+//Found token: ;
+TOKEN_MGR_DECLS : {
+    public static void main(String[] args) {
+        StringReader sr = new StringReader("/* This is a \nmulti-line Java comment. */ int a;");
+        SimpleCharStream scs = new SimpleCharStream(sr);
+        JavaCommentTokenManager mgr = new JavaCommentTokenManager(scs);
+        for (Token t = mgr.getNextToken(); t.kind != EOF; t = mgr.getNextToken()) {
+            debugStream.print("Found token: ");
+            if (t.specialToken != null) {
+                debugStream.print(t.specialToken.image);
+            }
+            debugStream.println(t.image);
+        }
+    }
+}
+
+SKIP : {
+    " "
+}
+
+MORE : {
+    "/*"
+    : IN_MULTI_LINE_COMMENT
+}
+
+<IN_MULTI_LINE_COMMENT>
+MORE : {
+    < ~[] >
+}
+
+<IN_MULTI_LINE_COMMENT>
+SPECIAL_TOKEN : {
+    <MULTI_LINE_COMMENT : "*/" >
+    : DEFAULT
+}
+
+TOKEN : {
+    <ID: <LETTER> (<DIGIT>)* (<LETTER>)* >
+    // <#...>: private token definition
+    | <#LETTER : ["a"-"z", "A"-"Z"]>
+    | <#DIGIT : ["0"-"9"]>
+    | <COMMA : ";">
+}
+

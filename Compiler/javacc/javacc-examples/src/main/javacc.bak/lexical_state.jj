@@ -1,0 +1,88 @@
+// Examples of 'Lexical States' in 'Generating Parsers with JavaCC'
+
+options {
+    LOOKAHEAD = 1;
+}
+
+PARSER_BEGIN(LexicalState)
+package com.spike.javacc.lexical_state;
+import java.io.*;
+
+public class LexicalState {
+
+}
+PARSER_END(LexicalState)
+
+// Expected output:
+//to IN_RED
+//to IN_RED
+//to IN_BLUE
+//to IN_GREEN
+//to DEFAULT
+TOKEN_MGR_DECLS : {
+    public static void main(String[] args) {
+        StringReader sr = new StringReader("red red blue green default");
+        SimpleCharStream scs = new SimpleCharStream(sr);
+        LexicalStateTokenManager mgr = new LexicalStateTokenManager(scs);
+        for (Token t = mgr.getNextToken(); t.kind != EOF; t = mgr.getNextToken()) {
+//            debugStream.println("Found token: " + t.image);
+        }
+    }
+}
+
+// for all lexical states
+<*>
+SKIP : {
+    " "
+}
+
+// transitions:
+// DEFAULT -red-> IN_RED
+// IN_RED -blue-> IN_BLUE
+//        -red-> IN_RED
+// IN_BLUE -green-> IN_GREEN
+//         -red-> IN_RED
+// IN_GREEN -default-> DEFAULT
+
+// consolidate token definitions across lexical states
+<DEFAULT, IN_RED>
+TOKEN : {
+    <RED : "red">
+    {
+        debugStream.println("to IN_RED");
+    }
+    : IN_RED
+}
+
+<IN_RED>
+TOKEN : {
+    <BLUE : "blue">
+    {
+        debugStream.println("to IN_BLUE");
+    }
+    : IN_BLUE
+}
+
+<IN_BLUE>
+TOKEN : {
+    <GREEN : "green">
+    {
+        debugStream.println("to IN_GREEN");
+    }
+    : IN_GREEN
+    // relabel a token
+    | <RED_2 : <RED>>
+    {
+        debugStream.println("to IN_RED");
+    }
+    : IN_RED
+}
+
+<IN_GREEN>
+TOKEN : {
+    <DONE : "default">
+    {
+        debugStream.println("to DEFAULT");
+    }
+    : DEFAULT
+}

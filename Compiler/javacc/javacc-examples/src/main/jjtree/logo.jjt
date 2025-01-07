@@ -1,0 +1,114 @@
+// Example 7.8 Recovering from an Error with JJTree in 'Generating Parsers with JavaCC'
+
+options {
+    LOOKAHEAD = 1;
+    MULTI = true;
+    VISITOR = true;
+}
+
+PARSER_BEGIN(Logo)
+package com.spike.javacc.error.jjtree.logo;
+
+import java.io.*;
+
+public class Logo {
+    public static void main(String[] args){
+//       StringReader sr = new StringReader("FORWARD 20\nRIGHT 120\nFORWARD 20\n");
+      StringReader sr = new StringReader("FORWARD 20\nRIGHT RIGHT 120\nFORWARD 20\n");
+      Logo p = new Logo(sr);
+        try {
+            ASTProgram program = p.Program();
+            program.dump("");
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+    }
+}
+PARSER_END(Logo)
+TOKEN_MGR_DECLS : {
+    public static void main(String[] args) throws Exception {
+//        StringReader sr = new StringReader("FORWARD 20\nRIGHT 120\nFORWARD 20");
+        StringReader sr = new StringReader("FORWARD 20\nRIHGT 120\nFORWARD 20");
+        SimpleCharStream scs = new SimpleCharStream(sr);
+        LogoTokenManager mgr = new LogoTokenManager(scs);
+        while (true) {
+            try {
+                if (readAllTokens(mgr).kind == EOF) {
+                    break;
+                }
+            } catch (TokenMgrError e) {
+                debugStream.println(e.getMessage());
+                recoverTo(' ');
+            }
+        }
+    }
+
+    private static Token readAllTokens(LogoTokenManager mgr) {
+        Token t;
+        for (t = mgr.getNextToken(); t.kind != EOF; t = mgr.getNextToken()) {
+            String loc = " starting at " + t.beginLine + "," + t.beginColumn;
+            loc += " and ending at" + t.endLine + "," + t.endColumn;
+            debugStream.println("Found a " + LogoConstants.tokenImage[t.kind] + ": " + t.image + loc);
+        }
+        return t;
+    }
+    private static void recoverTo(char delimiter) throws IOException {
+        debugStream.println("Skipping ahread...");
+        int skipped = 0;
+        while (input_stream.readChar() != delimiter) {
+            skipped++;
+        }
+        debugStream.println("Skipped " + skipped + " characters");
+    }
+}
+
+
+SKIP : {
+    " "
+}
+
+TOKEN : {
+    <FORWARD : "FORWARD" >
+    | <RIGHT : "RIGHT" >
+    | <DIGITS : (["1"-"9"])+ (["0"-"9"])* >
+    | <EOL : "\r" | "\n" | "\r\n">
+}
+
+ASTProgram Program() :
+{}
+{
+    // deep error recovery
+    (
+        try {
+            Move() { System.out.println("MOVE");}
+            | Turn() {System.out.println("TURN");}
+        } catch (ParseException e) {
+            System.out.println("Skip due to: " + e.getMessage());
+            skipThisCommand();
+            // need to pop node
+            jjtree.popNode();
+        }
+    )+
+    {return jjtThis;}
+}
+
+void Move() :
+{}
+{
+    <FORWARD> <DIGITS> <EOL>
+}
+
+void Turn() :
+{}
+{
+    <RIGHT> <DIGITS> <EOL>
+}
+
+JAVACODE
+String skipThisCommand() {
+    Token t;
+    do {
+        t = getNextToken();
+    } while (t.kind != EOL);
+    return t.image;
+}
