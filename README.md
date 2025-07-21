@@ -11,5 +11,7 @@ Actions:
 - [SemanticWeb](./SemanticWeb/README.md): Web of linked data.
 - [SPIN](./SPIN/README.md): formal verification of multi-threaded software applications.
 - [TLA+](./TLAplus/README.md): modeling concurrent and distributed programs and systems.
-- [Types](./Types/README.md)
-  - [Idris](./Idris/README.md): Type-Driven Development, Type Checker.
+- [Types](./Types/Types.md)
+  - [Idris](./Types/Idris/Idris.md): Type-Driven Development, Type Checker.
+  - [Ocaml](./Types/OCaml/OCaml.md)
+  - [Haskell](./Types/Haskell/Haskell.md)
