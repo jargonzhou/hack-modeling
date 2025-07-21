@@ -7,6 +7,7 @@ Actions:
 - [Concurrent and Parallel](./Concurrent_Parallel/Concurrent_Parallel.md) 
 - [JFLAP](./JFLAP/README.md): formal languages experimenting, NFA, NPDA, TM, grammars.
 - [Lisp](./Lisp/README.md): LISt Processor, manipulate source code as a data structure.
+- [Machine Learning](./MachineLearning/MachineLearning.md)
 - [NuSMV](./NuSMV/README.md): symbolic model checker.
 - [Prolog](./Prolog/README.md): logic programming.
 - [SemanticWeb](./SemanticWeb/README.md): Web of linked data.

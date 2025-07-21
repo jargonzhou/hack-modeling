@@ -6,6 +6,9 @@ JFLAP/Tutorial_JFLAP_Files
 JFLAP/*.pdf
 JFLAP/*.jar
 
+# MachineLearning
+MachineLearning/data/
+
 # NuSMV
 
 # Prolog
