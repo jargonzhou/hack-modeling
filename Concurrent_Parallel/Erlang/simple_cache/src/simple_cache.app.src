@@ -1,0 +1,17 @@
+{
+	application,
+	simple_cache,										% 应用的名称
+	[													% 应用的参数
+		{description, "A Simple Cache Application"},
+		{vsn, "0.0.1"},
+		{modules, [sc_app, sc_sup]},						% 应用中所有模块
+		{registered, [sc_sup]},								% 应用中注册的进程名称
+		{applications, [kernel, stdlib]},					% 当前应用启动前需要启动的应用
+		{mod, {sc_app, []}},								% 启动应用的参数
+
+		{env,[]},
+  		{maintainers, []},
+  		{licenses, []},
+  		{links, []}
+	]
+}.

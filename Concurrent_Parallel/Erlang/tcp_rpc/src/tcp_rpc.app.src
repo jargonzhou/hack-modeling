@@ -1,0 +1,17 @@
+{
+	application, 
+	tcp_rpc,
+ 	[
+		{description, "A TCP RPC Server Application"},
+		{vsn, "0.0.1"},
+		{modules, [tr_app, tr_sup, tr_server]},				% 应用中所有模块
+		{registered, [tr_sup]},								% 应用中注册的进程名称
+		{applications, [kernel, stdlib]},					% 当前应用启动前需要启动的应用
+		{mod, {tr_app, []}},								% 启动应用的参数
+
+		{env,[]},
+  		{maintainers, []},
+  		{licenses, []},
+  		{links, []}
+	]
+}.
