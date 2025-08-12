@@ -1,13 +1,13 @@
 .vscode
 
 # JFLAP
-JFLAP/Tutorial_JFLAP_Files.zip
-JFLAP/Tutorial_JFLAP_Files
-JFLAP/*.pdf
-JFLAP/*.jar
+pl/JFLAP/Tutorial_JFLAP_Files.zip
+pl/JFLAP/Tutorial_JFLAP_Files
+pl/JFLAP/*.pdf
+pl/JFLAP/*.jar
 
 # MachineLearning
-MachineLearning/data/
+ml/data/
 
 # NuSMV
 
@@ -15,36 +15,37 @@ MachineLearning/data/
 Prolog/**/*_output.txt
 
 # SemanticWeb
-SemanticWeb/**/.idea
-SemanticWeb/**/target
-SemanticWeb/**/tdb
+model/SemanticWeb/**/.idea
+model/SemanticWeb/**/target
+model/SemanticWeb/**/tdb
 
 # SPIN
 
 # TLAplus
-# TLAplus/**/*.cfg
-TLAplus/**/*.old
-TLAplus/**/*.out
-TLAplus/**/*.tex
-TLAplus/**/states
-TLAplus/**/*.toolbox
-TLAplus/vscode-tlaplus/out.csv
+# model/TLAplus/**/*.cfg
+model/TLAplus/**/*.old
+model/TLAplus/**/*.out
+model/TLAplus/**/*.tex
+model/TLAplus/**/states
+model/TLAplus/**/*.toolbox
+model/TLAplus/vscode-model/TLAplus/out.csv
+
 
 # Types
 ## Idris
-Types/Idris/build
-Types/Idris/**/*.ibc
-Types/Idris/**/build
+pl/Types/Idris/build
+pl/Types/Idris/**/*.ibc
+pl/Types/Idris/**/build
 ## OCaml
-Types/OCaml/**/_build
-Types/OCaml/**/*.cmi
-Types/OCaml/**/*.cmo
-Types/OCaml/oftvb/stats
-Types/OCaml/oftvb/iotest
-Types/OCaml/oftvb/files
-Types/OCaml/oftvb/files.txt
-Types/OCaml/**/*.out
+pl/Types/OCaml/**/_build
+pl/Types/OCaml/**/*.cmi
+pl/Types/OCaml/**/*.cmo
+pl/Types/OCaml/oftvb/stats
+pl/Types/OCaml/oftvb/iotest
+pl/Types/OCaml/oftvb/files
+pl/Types/OCaml/oftvb/files.txt
+pl/Types/OCaml/**/*.out
 
 # Compiler
-Compiler/javacc/javacc-examples/src/main/resources/apache.log
-Compiler/javacc/javacc-examples/records.scm
+pl/Compiler/javacc/javacc-examples/src/main/resources/apache.log
+pl/Compiler/javacc/javacc-examples/records.scm
