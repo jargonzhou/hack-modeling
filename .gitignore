@@ -1,4 +1,6 @@
 .vscode
+**/__pychache__
+*.pyc
 
 # JFLAP
 pl/JFLAP/Tutorial_JFLAP_Files.zip
@@ -8,6 +10,7 @@ pl/JFLAP/*.jar
 
 # MachineLearning
 ml/data/
+ml/tools/dataset/cache
 
 # NuSMV
 
