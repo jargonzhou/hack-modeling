@@ -1,5 +1,6 @@
 # seaborn
 * https://seaborn.pydata.org
+* code: https://github.com/mwaskom/seaborn
 
 > seaborn: statistical data visualization
 >

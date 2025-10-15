@@ -1,4 +1,3 @@
-.vscode
 **/__pychache__
 *.pyc
 
@@ -7,10 +6,6 @@ pl/JFLAP/Tutorial_JFLAP_Files.zip
 pl/JFLAP/Tutorial_JFLAP_Files
 pl/JFLAP/*.pdf
 pl/JFLAP/*.jar
-
-# MachineLearning
-ml/data/
-ml/tools/dataset/cache
 
 # NuSMV
 
@@ -35,6 +30,7 @@ model/TLAplus/vscode-model/TLAplus/out.csv
 
 
 # Types
+pl/Types/**/.vscode
 ## Idris
 pl/Types/Idris/build
 pl/Types/Idris/**/*.ibc
@@ -52,3 +48,11 @@ pl/Types/OCaml/**/*.out
 # Compiler
 pl/Compiler/javacc/javacc-examples/src/main/resources/apache.log
 pl/Compiler/javacc/javacc-examples/records.scm
+
+# Machine Learning
+ml/data/
+ml/tools/dataset/cache
+ml/tools/tensorflow/logs
+ml/codes/hands-on-ml/data
+ml/codes/python-for-data-analysis/data/datawrangling
+ml/codes/python-for-data-analysis/data/pci

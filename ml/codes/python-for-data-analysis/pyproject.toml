@@ -4,8 +4,16 @@ version = "0.1.0"
 description = ""
 authors = [{ name = "jargonzhou", email = "zhoujiagen@gmail.com" }]
 readme = "README.md"
-requires-python = ">=3.12"
-dependencies = ["numpy (>=2.3.2,<3.0.0)", "matplotlib (>=3.10.5,<4.0.0)", "bokeh (>=3.7.3,<4.0.0)"]
+requires-python = ">=3.12,<4.0"
+dependencies = [
+  "numpy (>=2.3.2,<3.0.0)",
+  "matplotlib (>=3.10.5,<4.0.0)",
+  "bokeh (>=3.7.3,<4.0.0)",
+  "slate3k (>=0.5.3,<0.6.0)",
+  "xlrd (>=2.0.2,<3.0.0)",
+  "treelib (>=1.8.0,<2.0.0)",
+  "prettytable (>=3.16.0,<4.0.0)",
+]
 
 [tool.poetry]
 packages = [{ include = "python_for_data_analysis", from = "src" }]

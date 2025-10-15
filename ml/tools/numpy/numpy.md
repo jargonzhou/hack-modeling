@@ -57,7 +57,7 @@ array function protocol: Numpy-like API interoperability
 - `__array_function__` protocol: 1.17
 - projects
   - [Cupy](https://cupy.chainer.org/): NumPy/SciPy-compatible Array Library for GPU-accelerated Computing with Python
-  - [JAX](https://jax.readthedocs.io/en/latest/jax.numpy.html): JAX is a Python library for accelerator-oriented array computation and program transformation, designed for high-performance numerical computing and large-scale machine learning.
+  - [JAX](../jax/jax.md): JAX is a Python library for accelerator-oriented array computation and program transformation, designed for high-performance numerical computing and large-scale machine learning.
   - [Apache MXNet](https://numpy.mxnet.io/): Lightweight, Portable, Flexible Distributed/Mobile Deep Learning with Dynamic, Mutation-aware Dataflow Dep Scheduler; for Python, R, Julia, Scala, Go, Javascript and more. MXNet retired in September 2023 and the move to [the Attic](https://attic.apache.org/projects/mxnet.html) was completed in February 2024.
   - [PyTorch](https://pytorch.org/tutorials/beginner/blitz/tensor_tutorial.html)
   - [Tensorflow](https://www.tensorflow.org/tutorials/customization/basics)
@@ -945,4 +945,5 @@ print(a) # [0 1 2 3]
 # See Also
 
 * [Numba](./Numba.md)
+* [numpy-100](https://github.com/rougier/numpy-100): 100 numpy exercises.
 

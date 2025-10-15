@@ -1,0 +1,19 @@
+{
+  // src folder
+  "python.analysis.extraPaths": [
+    "src"
+  ],
+  // environment varibales
+  "python.envFile": "${workspaceFolder}/.venv",
+  "python.testing.cwd": "${workspaceFolder}",
+  "python.testing.unittestArgs": [
+    "-v",
+    "-s",
+    "./tests",
+    "-p",
+    "test_*.py"
+  ],
+  "python.testing.pytestEnabled": false,
+  "python.testing.unittestEnabled": true,
+  "python-envs.pythonProjects": [],
+}

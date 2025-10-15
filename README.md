@@ -27,4 +27,4 @@ A collection of materials and actions on hacking modeling methodology.
 * [Concurrent and Parallel](./cp/Concurrent_Parallel.md) 
 
 # Machine Learning
-* [Machine Learning](./ml/MachineLearning.md)
+* [Machine Learning](./ml/Machine%20Learning.md)

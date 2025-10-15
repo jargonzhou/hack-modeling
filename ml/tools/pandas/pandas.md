@@ -12,6 +12,40 @@ action:
 - [pandas-dataframe.ipynb](./pandas-dataframe.ipynb)
 - [pandas-time-series.ipynb](./pandas-time-series.ipynb)
 
+# Data Structure
+# Series
+
+# DataFrame
+
+methods:
+```python
+head()
+info()
+['attr-name'].value_counts()
+drop('attr-name')
+iloc[]
+loc()
+reset_index() # use row index
+
+copy()
+
+# https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.corr.html#pandas.DataFrame.corr
+corr() # correlation
+
+dropna()
+drop()
+fillna()
+
+select_dtypes()
+```
+
+# Utilities
+
+```python
+pd.cut()
+pd.get_dummies() # convert categorical feature into one-hot representation
+```
+
 # Extension data types
 
 allow new data types to be added besides NumPy supported.

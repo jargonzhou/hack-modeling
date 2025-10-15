@@ -383,3 +383,54 @@ $$
 ## Survival Analysis and Censored Data
 ## Unsupervised Learning
 ## Multiple Testing
+
+# Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow.
+
+- $m$: number of instances in the dataset
+- $\textbf{x}^{(i)}$: a vector of all the features values of the ith instance in the dataset
+- $y^{(i)}$: label of the ith instance in the dataset
+- $\textbf{X}$: a matrix containing all the feature values of all instances in the dataset.
+- $h$: the prediction function, called hypothesis.
+  - $\hat{y}^{(i)} = h(\textbf{x}^{(i)})$
+- $\texttt{RMSE}(\textbf{X},h)$: root mean squared error, the cost function measured on the examples using hypothesis $h$. 
+$$
+\texttt{RMSE}(\textbf{X},h) = \sqrt{\frac{1}{m}\sum_{i=1}^{m}\left( h( \textbf{x}^{(i)} ) - y^{(i)} \right)^{2}}
+$$
+- $\texttt{MSE}$: mean squared error.
+
+examples:
+
+$$
+\textbf{x}^{(1)} = 
+   \left(
+   \begin{array}{c}
+   −118.29 \\
+   33.91 \\
+   1416 \\
+   38372
+   \end{array}
+   \right)
+\\
+y^{(1)} = 156400
+$$
+
+$$
+\left(
+\begin{array}{c}
+(\textbf{x}^{(1)})^{T} \\
+(\textbf{x}^{(2)})^{T} \\
+\vdots \\
+(\textbf{x}^{(1999)})^{T} \\
+(\textbf{x}^{(2000)})^{T}
+\end{array}
+\right) 
+
+= 
+
+\left(
+\begin{array}{c}
+−118.29 & 33.91 & 1416 & 38372 \\
+\vdots & \vdots & \vdots & \vdots
+\end{array}
+\right)
+$$

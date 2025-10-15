@@ -5,6 +5,10 @@
 
 > Bokeh is a Python library for creating interactive visualizations for modern web browsers. It helps you build beautiful graphics, ranging from simple plots to complex dashboards with streaming datasets. With Bokeh, you can create JavaScript-powered visualizations without writing any JavaScript yourself.
 
+actions:
+- [bokeh.ipynb](./bokeh.ipynb)
+- `python-for-data-analysis/tests/test_bokeh/test_first_step.py`
+
 # Scenarios
 * Applications: Build Powerful Data Applications
 ![](http://bokeh.org/img/apps.gif)
