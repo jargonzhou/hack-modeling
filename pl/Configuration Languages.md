@@ -46,6 +46,7 @@
 
 # Starlark
 * https://github.com/bazelbuild/starlark
+* [Starlark Language Specification](https://github.com/bazelbuild/starlark/blob/master/spec.md)
 
 > Starlark (formerly known as Skylark) is a language intended for use as a configuration language. It was designed for the [Bazel](https://bazel.build/) build system, but may be useful for other projects as well. This repository is where Starlark features are proposed, discussed, and specified. It contains information about the language, including the [specification](https://github.com/bazelbuild/starlark/blob/master/spec.md). There are [multiple implementations of Starlark](https://github.com/bazelbuild/starlark/blob/master/users.md).
 >

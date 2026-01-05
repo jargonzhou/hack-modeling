@@ -1,7 +1,0 @@
-# test-libc.ss
-
-(foreign-entry? "getenv") ;=> #t
-(getenv "JAVA_HOME") ;=> "/Library/Java/JavaVirtualMachines/jdk-11.0.15.jdk/Contents/Home"
-(getenv "HOME") ;=> "/Users/zhang"
-Hello Scheme!
-(printf "%s\n" "Hello Scheme!") ;=> 14

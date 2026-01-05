@@ -1,12 +1,40 @@
+target/
+
+################################################################################
+# Algorithms
+################################################################################
+# FIXME
+algorithms/
+
+################################################################################
+# Concept Maps
+################################################################################
+# FIXME
+ConceptMaps/
+
+################################################################################
+# Concurrent Parallel
+################################################################################
+
+################################################################################
+# Editor
+################################################################################
+
+################################################################################
+# Machine Learning
+################################################################################
 **/__pychache__
 *.pyc
+ml/data/
+ml/tools/dataset/cache
+ml/tools/tensorflow/logs
+ml/codes/hands-on-ml/data
+ml/codes/python-for-data-analysis/data/datawrangling
+ml/codes/python-for-data-analysis/data/pci
 
-# JFLAP
-pl/JFLAP/Tutorial_JFLAP_Files.zip
-pl/JFLAP/Tutorial_JFLAP_Files
-pl/JFLAP/*.pdf
-pl/JFLAP/*.jar
-
+################################################################################
+# Model
+################################################################################
 # NuSMV
 
 # Prolog
@@ -28,6 +56,44 @@ model/TLAplus/**/states
 model/TLAplus/**/*.toolbox
 model/TLAplus/vscode-model/TLAplus/out.csv
 
+################################################################################
+# Programming Lanaugages
+################################################################################
+# Assembly
+# FIXME
+pl/Assembly/
+
+# C
+# FIXME
+pl/C/
+
+# Compiler
+pl/Compiler/
+pl/Compiler/javacc/javacc-examples/src/main/resources/apache.log
+pl/Compiler/javacc/javacc-examples/records.scm
+
+# CPP
+# FIXME
+pl/CPP/
+
+# JFLAP
+pl/JFLAP/Tutorial_JFLAP_Files.zip
+pl/JFLAP/Tutorial_JFLAP_Files
+pl/JFLAP/*.pdf
+pl/JFLAP/*.jar
+
+# Julia
+# FIXME
+pl/Julia
+
+# Kotlin
+# FIXME
+pl/Kotlin/
+pl/kotlin.core-gradle/
+
+# Lisp
+.clj-kondo
+.lsp
 
 # Types
 pl/Types/**/.vscode
@@ -45,14 +111,13 @@ pl/Types/OCaml/oftvb/files
 pl/Types/OCaml/oftvb/files.txt
 pl/Types/OCaml/**/*.out
 
-# Compiler
-pl/Compiler/javacc/javacc-examples/src/main/resources/apache.log
-pl/Compiler/javacc/javacc-examples/records.scm
+# R
+# FIXME
+pl/R/
 
-# Machine Learning
-ml/data/
-ml/tools/dataset/cache
-ml/tools/tensorflow/logs
-ml/codes/hands-on-ml/data
-ml/codes/python-for-data-analysis/data/datawrangling
-ml/codes/python-for-data-analysis/data/pci
+# Rust
+# FIXME
+pl/Rust/
+
+# Tools
+pl/tools/Bazel/examples

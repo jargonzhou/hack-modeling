@@ -1,6 +1,12 @@
 # Concurrent and Parallel
 * [Concurrent_Parallel.ipynb](./Concurrent_Parallel.ipynb)
 
+# Books
+* Breshears, Clay. **The Art of Concurrency**. 2009. O’Reilly.
+* aipp: Pacheco, Peter / Malensek, Matthew. **An Introduction to Parallel Programming**. 2021, 2. edition. Morgan Kaufmann.
+* tamp: Herlihy, Maurice / Shavit, Nir / Luchangco, Victor / Spear, Michael. **The Art of Multiprocessor Programming**. 2021, 2. edition. Morgan Kaufmann.
+* Bobrov, Kirill. **Grokking Concurrency**. 2023. Manning.
+
 # Actions
 * [Pthreads.ipynb](./Pthreads.ipynb)
 * [OpenMP.ipynb](./OpenMP.ipynb)
