@@ -4,6 +4,7 @@
 * [Compiler](./Compiler/Compiler.md): compiler tools.
 * [Configuration Languages](./Configuration%20Languages.md)
 * [JFLAP](./JFLAP/README.md): formal languages experimenting, NFA, NPDA, TM, grammars.
+* [Golang](https://github.com/jargonzhou/learning-golang): Go is an open source programming language that makes it easy to build simple, reliable, and efficient software.
 * [Lisp](https://github.com/jargonzhou/learning-lisp): LISt Processor, manipulate source code as a data structure.
 * [Programming Language Theory](./plt/plt.md)
 * [Prolog](./Prolog/Prolog.md): logic programming.
