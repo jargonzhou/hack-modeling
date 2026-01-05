@@ -4,3 +4,9 @@
 [submodule "pl/Scala"]
 	path = pl/Scala
 	url = https://github.com/jargonzhou/learning-scala
+[submodule "pl/Python"]
+	path = pl/Python
+	url = https://github.com/jargonzhou/learning-python
+[submodule "pl/Golang"]
+	path = pl/Golang
+	url = https://github.com/jargonzhou/learning-golang
