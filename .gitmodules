@@ -1,3 +1,6 @@
 [submodule "pl/Lisp"]
 	path = pl/Lisp
 	url = https://github.com/jargonzhou/learning-lisp
+[submodule "pl/Scala"]
+	path = pl/Scala
+	url = https://github.com/jargonzhou/learning-scala

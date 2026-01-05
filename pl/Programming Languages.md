@@ -7,6 +7,7 @@
 * [Lisp](https://github.com/jargonzhou/learning-lisp): LISt Processor, manipulate source code as a data structure.
 * [Programming Language Theory](./plt/plt.md)
 * [Prolog](./Prolog/Prolog.md): logic programming.
+* [Scala](https://github.com/jargonzhou/learning-scala): SCAlable LAnguage.
 * [Types](./Types/Types.md)
   - [Haskell](./Types/Haskell/Haskell.md)
   - [Idris](./Types/Idris/Idris.md): Type-Driven Development, Type Checker.
