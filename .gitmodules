@@ -10,6 +10,3 @@
 [submodule "pl/Golang"]
 	path = pl/Golang
 	url = https://github.com/jargonzhou/learning-golang
-[submodule "pl/Compiler/JVM"]
-	path = pl/Compiler/JVM
-	url = https://github.com/jargonzhou/hack-jvm
