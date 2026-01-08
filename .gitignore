@@ -68,9 +68,6 @@ pl/Assembly/
 pl/C/
 
 # Compiler
-pl/Compiler/
-pl/Compiler/javacc/javacc-examples/src/main/resources/apache.log
-pl/Compiler/javacc/javacc-examples/records.scm
 
 # CPP
 # FIXME
@@ -85,11 +82,6 @@ pl/JFLAP/*.jar
 # Julia
 # FIXME
 pl/Julia
-
-# Kotlin
-# FIXME
-pl/Kotlin/
-pl/kotlin.core-gradle/
 
 # Lisp
 .clj-kondo
