@@ -10,4 +10,9 @@ Tutorial
 - [A walk through the Magit interface](https://emacsair.me/2017/09/01/magit-walk-through/) - 2017-09-01
 - [Magit, the magical Git interface](https://emacsair.me/2017/09/01/the-magical-git-interface) - 2017-09-01
 
+# Usage
+- `C-x g`: show the status buffer
+- `TAB`: toggle details
+- `RET`: show more detailed view on commit, branch, diff, hub, stash...
+
 # See Also

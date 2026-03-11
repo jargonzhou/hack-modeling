@@ -1,45 +1,7 @@
-# Notes of 'Mastering Emacs'
+# Mastering Emacs
+* https://www.masteringemacs.org/
 
-| #    | Title                            | Progress | Description |
-| :--- | :------------------------------- | :------- | :---------- |
-| 1    | [[#5.1 Introduction]]            | 100%     | 2024-09-03  |
-| 2    | [[#5.2 The Way of Emacs]]        | 100%     | 2024-09-04  |
-| 3    | [[#5.3 First Steps]]             | 100%     | 2024-09-08  |
-| 4    | [[#5.4 The Theory of Movement]]  | 100%     | 2024-10-07  |
-| 5    | [[#5.5 The Theory of Editing]]   | xxx%     | yyyy-mm-dd  |
-| 6    | [[#5.6 The Practicals of Emacs]] | xxx%     | yyyy-mm-dd  |
-| 7    | [[#5.7 Conclusion]]              | 100%     | 2024-10-07  |
-
-# 1 Tips for Recapture
-
-<!-- 帮助重温的过程总结. -->
-
-1. Step 1
-
-# 2 术语
-
-<!-- 记录阅读过程中出现的关键字及其简单的解释. -->
-
-<!-- 进展中需要再次确认的术语:
-
-进行中: 术语1
-已完成: ~~术语1~~
--->
-
-
-
-# 3 介绍
-
-<!-- 描述书籍阐述观点的来源、拟解决的关键性问题和采用的方法论等. -->
-
-# 4 动机
-
-<!-- 描述阅读书籍的动机, 要达到什么目的等. -->
-
-# 5 概念结构
-
-<!-- 描述书籍的行文结构, 核心主题和子主题的内容结构和关系. -->
-## 5.1 Introduction
+# 1 Introduction
 
 2022: Emacs 28, native compilation feature.
 
@@ -74,10 +36,10 @@ What you need to be productive in Emacs: 6 things
 - 6. **productivity**
 	- integration with hundreds of external tools.
 
-## 5.2 The Way of Emacs
+# 2 The Way of Emacs
 GNU Emacs
 
-### 5.2.1 Guiding Philosophy
+## 2.1 Guiding Philosophy
 Emacs is a tinkerer's editor. Plain and simple. (tinkerer: 喜欢捣鼓小器具、小发明的人.)
 - an original extensible, customizable, self-documenting editor.
 
@@ -141,7 +103,7 @@ Emacs has an excellent elisp **debugger** and unlimited access to every facets o
 	- support for almost every major version control system
 	- thousands of other features.
 
-### 5.2.2 Important Conventions
+## 2.2 Important Conventions
 
 > [!info] The Buffer
 
@@ -218,7 +180,7 @@ most of the keys and terminology stem from
 init file:
 - `~/.emacs`
 - `~/.emacs.d/init.el`: Linux
-- `%HOME%\init.el`: Windows - FIX: Use 'Open Home Directory' link, example `c:/Users/zhouj/AppData/Roaming`.
+- `%HOME%\init.el`: Windows - FIX: Use 'Open Home Directory' link, example `~/AppData/Roaming`.
 - `~/.config/emacs/init.el`: [[#9.2 XDG(X Desktop Group)|XDG]] convention of user configuration on Linux
 
 `C-h v` `user-emacs-directory RET`: show init file folder.
@@ -240,9 +202,9 @@ init file:
 - *example*: flyspell mode, a minor mode that spell checks text as you write.
 - some are diaplayed in the modeline.
 
-## 5.3 First Steps
+# 3 First Steps
 
-### 5.3.1 Installing and Starting Emacs
+## 3.1 Installing and Starting Emacs
 
 ```shell
 emacs --version
@@ -280,12 +242,12 @@ M-x server-mode
 M-x server-force-delete
 ```
 
-### 5.3.2 The Emacs Interface
+## 3.2 The Emacs Interface
 
 the splash screen.
 in Terminal Emacs, access the menu bar use `F10`.
 
-### 5.3.3 Keys
+## 3.3 Keys
 
 Emacs is famous for two things: 
 - its obscure keyboard incantations and that - 晦涩的键盘咒语.
@@ -395,7 +357,7 @@ example:
 | :---------- | :-------------------------------------------- |
 | `C-x 8 C-h` | display keys and commands of `C-x 8` key map. |
 
-### 5.3.4 Configuring Emacs
+## 3.4 Configuring Emacs
 
 choices to change Emacs:
 - use the Customize interface.
@@ -437,6 +399,7 @@ commands:
 | :---------------- | :------------------------------------ |
 | `M-x eval-buffer` | evaluate the entire buffer.           |
 | `M-x eval-region` | evaluate just the region have marked. |
+
 > [!info]  The Package Manager
 
 Emacs comes with a **package manager** that displays and installs packages from centralized **repositories**.
@@ -449,13 +412,15 @@ Emacs comes with a **package manager** that displays and installs packages from 
 | `M-x package-list-packages`    | retrieve the package listing from configured repositories. |
 | `M-x package-install`          | install packages.                                          |
 | `M-x package-refresh-contents` | refresh the repository catalog.                            |
+
 > [!info]  Custom Color Themes
 
 | Command                   | Description                   |
 | :------------------------ | :---------------------------- |
 | `M-x customize-themes`    | list installed custom themes. |
 | `M-x list-colors-display` | list supported color names    |
-### 5.3.5 Getting Help
+
+## 3.5 Getting Help
 Emacs is a self-documenting editor: every facet of Emacs is searchable or describable.
 **symbol**: express anything can look up, including variable, function, face, etc.
 
@@ -543,7 +508,7 @@ Emacs 28 adds shortcuts to all *describe buffers*:
 | `s`         | jump to the source definition. |
 | `c`         | open the Customize interface.  |
 
-## 5.4 The Theory of Movement
+# 4 The Theory of Movement
 
 Movement in Emacs is local, regional or global.
 - **local**: when edit and move around text near to the *point*.
@@ -558,7 +523,7 @@ a tiling window manager
 In Emacs, windows are transient: they come and go as you need them.
 Buffers are rarely killed/close when they are no longer needed.
 
-### 5.4.1 The Basics
+## 4.1 The Basics
 
 | Key Binding           | Description                                                                  |
 | :-------------------- | :--------------------------------------------------------------------------- |
@@ -716,7 +681,7 @@ simulate the classic undo-redo behavior:
 - `M-x undo-redo`: Emacs 28+, `C-?`, `C-M-_`, a redo command for undo.
 - `M-x undo-only`: will not redo a previous undo.
 
-### 5.4.2 Window Management
+## 4.2 Window Management
 
 | Key Binding | Description              |
 | :---------- | :----------------------- |
@@ -763,7 +728,7 @@ The other window: the one immediately after the current one when run `C-x o`.
 | `C-x 4 0`   | kill the buffer and window                                      |
 | `C-x 4 p`   | run project command in other window                             |
 
-### 5.4.3 Frame Management
+## 4.3 Frame Management
 
 Frame: what are called windows in other programs and window managers.
 
@@ -778,7 +743,7 @@ Frame: what are called windows in other programs and window managers.
 | `C-x 5 d`   | open `M-x dired` in other frame    |
 | `C-x 5 C-o` | display a buffer in other frame    |
 
-### 5.4.4 Tab Bars and Tab Lines
+## 4.4 Tab Bars and Tab Lines
 
 Since Emacs 27, tow tab modes:
 - tab bar mode
@@ -823,7 +788,7 @@ a feature more akin to the tabs in a web browser.
 | `C-x <left>`               | select previous buffer |
 | `C-x <right>`              | select next buffer     |
 
-### 5.4.5 Elemental Movement
+## 4.5 Elemental Movement
 
 > [!info] Navigation Keys
 
@@ -975,7 +940,7 @@ beginning and end of buffer:
 | `M-<`       | move to the beginning of the buffer |
 | `M->`       | move to the end of the buffer       |
 
-### 5.4.6 Bookmarks and Registers
+## 4.6 Bookmarks and Registers
 
 bookmark sources:
 - files
@@ -1009,7 +974,7 @@ registers are transient, and are single-character store-and-recall mechanisms fo
 | `C-x r w`   | store window configuration in register |
 | `C-x r f`   | store framesets in register            |
 
-### 5.4.7 Selections and Regions
+## 4.7 Selections and Regions
 
 The **region** is always defined as the contiguous block of text between the **point** and the **mark**.
 
@@ -1054,7 +1019,7 @@ It's a tool for jumping around in a buffer as some commands that whisk you away 
 | `C-M-<SPC>`, `C-M-@` | mark the next s-expression |
 | `C-<SPC>`, `C-g`     | deactivate the region      |
 
-### 5.4.8 Searching and Indexing
+## 4.8 Searching and Indexing
 
 > [!info] Isearch: Increment Search
 
@@ -1159,7 +1124,7 @@ buffer: `*grep*`
 | `M-g M-n`   | jump to next match     |
 | `M-g M-p`   | jump to previous match |
 
-### 5.4.9 Other Movement Commands
+## 4.9 Other Movement Commands
 
 | Key Binding   | Description                                                          |
 | :------------ | :------------------------------------------------------------------- |
@@ -1172,9 +1137,9 @@ buffer: `*grep*`
 | `M-g TAB`     | go to column                                                         |
 | `M-g c`       | go to character position                                             |
 
-## 5.5 The Theory of Editing
+# 5 The Theory of Editing
 
-### 5.5.1 Killing and Yanking Text
+## 5.1 Killing and Yanking Text
 
 - **kill** text: cut text in other text editors
 - **deleted** text is not retained in the *kill ring*, killed text is.
@@ -1241,7 +1206,7 @@ cycle through the kill ring:
 - press `C-y` where we want the yanked text to appear.
 - without moving, editing, executing commands, press `M-y` to step back through the kill ring.
 
-### 5.5.2 Transposing Text
+## 5.2 Transposing Text
 
 swapping two syntactic units of text with one another.
 - first look at where the point is, then swap two syntactic units surrounding the point.
@@ -1276,7 +1241,7 @@ the point move forward one word.
 
 transpose other syntactic units: lines, paragraphs, sentences.
 
-### 5.5.3 Filling and Commenting
+## 5.3 Filling and Commenting
 
 > [!info] Filling
 
@@ -1307,7 +1272,7 @@ break paragraphs so the lines won't exceed a certain length.
 | `commnt-end`     | character(s) to mark end of comment.                    |
 | `commnt-padding` | padding used between comment character(s) and the text. |
 
-### 5.5.4 Search and Replace
+## 5.4 Search and Replace
 
 search: with or without regular expressions.
 replace: leverage the power of elisp.
@@ -1322,6 +1287,7 @@ Emacs's regular expression implementation:
 | `M-%`                | query search and replace.also inside Isearch.         |
 | `M-x replace-string` | search and replace                                    |
 | `M-x replace-regexp` | regexp search and replace                             |
+
 **query command**: interactive
 - prompts for search and replace.
 - the interactive part where we select each match.
@@ -1374,11 +1340,11 @@ example:
 
 > Invoking Elisp
 
-### 5.5.5 Changing Case
+## 5.5 Changing Case
 
-### 5.5.6 Counting Things
+## 5.6 Counting Things
 
-### 5.5.7 Text Manipulation
+## 5.7 Text Manipulation
 
 > [!info] Editable Occur
 
@@ -1392,31 +1358,31 @@ example:
 
 > [!info] Whitespace Commands
 
-### 5.5.8 Keyboard Macros
+## 5.8 Keyboard Macros
 
 > [!info] Basic Commands
 
 > [!info] Advanced Commands
 
-### 5.5.9 Text Expansion
+## 5.9 Text Expansion
 
 > [!info] `TAB`: Indenting the Current Line
 
 > [!info] Indenting Regions
 
-### 5.5.10 Indenting Text and Code
+## 5.10 Indenting Text and Code
 
 > [!info] `TAB`: Indenting the Current Line
 
 > [!info] Indenting Regions
 
-### 5.5.11 Sorting and Aligning
+## 5.11 Sorting and Aligning
 
 > [!info] Sorting
 
 > [!info] Aligning
 
-### 5.5.12 Other Editing Commands
+## 5.12 Other Editing Commands
 
 > [!info] Zapping Characters
 
@@ -1424,11 +1390,11 @@ example:
 
 > [!info] Quoted Insert
 
-## 5.6 The Practicals of Emacs
+# 6 The Practicals of Emacs
 
 **workflow**: walkthroughs that cover a specific area or problem in some depth.
 
-### 5.6.1 Exploring Emacs
+## 6.1 Exploring Emacs
 > [!tip] To truly master Emacs, you have to learn how to find things.
 
 > [!info] Reading the Manual
@@ -1443,23 +1409,23 @@ example:
 
 > [!info] `M-S-x`: Execute extended command for buffer
 
-### 5.6.2 Project Management
+## 6.2 Project Management
 
-### 5.6.3 Xref: Cross-References in Emacs
+## 6.3 Xref: Cross-References in Emacs
 
-### 5.6.4 Working with Log Files
+## 6.4 Working with Log Files
 
 > [!info] Browsing Other Files
 
-### 5.6.5 TRAMP: Remote File Editing
+## 6.5 TRAMP: Remote File Editing
 
 > [!info] The Default Directory and Remote Editing
 
 > [!info] Multi-Hops and User Switching
 
-### 5.6.6 EWW: Emacs Web Wowser
+## 6.6 EWW: Emacs Web Wowser
 
-### 5.6.7 Dired: Files and Directories
+## 6.7 Dired: Files and Directories
 
 Emacs's directory editor: dired.
 
@@ -1568,7 +1534,7 @@ Emacs's `find` wrapper commands: take the output of `find` and build a dired buf
 | `M-x find-grep-dired`      | call `find` and `grep`             |
 | `M-x find-lisp-find-dired` | Use Emacs and regexp to find files |
 
-### 5.6.8 Shell Commands
+## 6.8 Shell Commands
 
 shell command work on generic buffers:
 
@@ -1591,7 +1557,7 @@ shell command work on generic buffers:
 | `g`                  | re-run last command                         |
 | `C-x p c`            | compile in the current project              |
 
-### 5.6.9 Shells in Emacs
+## 6.9 Shells in Emacs
 
 | Key Binding     | Description                                            |
 | :-------------- | :----------------------------------------------------- |
@@ -1631,7 +1597,7 @@ ex:
 - `dired .`: open `M-x dired` session in the current directory.
 - `find-file todo.org`: open `todo.org` in currently-running Emacs.
 
-## 5.7 Conclusion
+# 7 Conclusion
 
 How do you master a text editor as diverse as Emacs?
 The answer: by knowing how to ask it the right questions.
@@ -1640,7 +1606,7 @@ Emacs is no longer an opaque box but a very open and transparent one that we can
 
 The natural next step is learn elisp.
 
-### 5.7.1 Other Resources
+## 7.1 Other Resources
 
 > [!info] Third-Party Packages and Tools
 
@@ -1675,35 +1641,18 @@ The natural next step is learn elisp.
 | Planet Emacs aggregator | https://planet.emacslife.com/            |
 - Emacs
 
-# 6 总结
-
-<!-- 概要记录书籍中如何解决关键性问题的. -->
-
-# 7 应用
-
-<!-- 记录如何使用书籍中方法论解决你自己的问题. -->
-
-# 8 文献引用
-
-<!-- 记录相关的和进一步阅读资料: 文献、网页链接等. -->
-- [Home](https://www.masteringemacs.org/)
-
+# See Also
+- [Evaluating Elisp in Emacs](https://www.masteringemacs.org/article/evaluating-elisp-emacs)
 - [The quick brown fox jumps over the lazy dog - wikipedia](https://en.wikipedia.org/wiki/The_quick_brown_fox_jumps_over_the_lazy_dog): an English-language pangram – a sentence that contains all the letters of the alphabet.
 
-# 9 其他备注
-- [Evaluating Elisp in Emacs](https://www.masteringemacs.org/article/evaluating-elisp-emacs)
-
-
-## 9.1 GNU Texinfo
-- [Home](https://www.gnu.org/software/texinfo/)
-## 9.2 XDG(X Desktop Group)
+- GNU Texinfo: https://www.gnu.org/software/texinfo/
+- XDG(X Desktop Group)
 - [XDG Base Directory Specification](https://specifications.freedesktop.org/basedir-spec/latest/): version 0.8, 2021.
 - abbrev: [Doom and XDG directories](https://discourse.doomemacs.org/t/doom-and-xdg-directories/3012)
-## 9.3 apropos
-- [apropos (Unix) - wikipedia](https://en.wikipedia.org/wiki/Apropos_(Unix)): apropos is a command to search the man page files in Unix and Unix-like operating systems.
-## 9.4 Keys
-Super:
-- [Make use of the Super key](https://emacsredux.com/blog/2013/07/17/make-use-of-the-super-key/)
-- [lowercase `s` as prefix in `describe-bindings`](https://emacs.stackexchange.com/questions/76385/lowercase-s-as-prefix-in-describe-bindings)
-## 9.5 IDO, FIDO
-- [Introduction to IDO mode](https://www.masteringemacs.org/article/introduction-to-ido-mode)
+- apropos
+  - [apropos (Unix) - wikipedia](https://en.wikipedia.org/wiki/Apropos_(Unix)): apropos is a command to search the man page files in Unix and Unix-like operating systems.
+- Keys
+  - [Make use of the Super key](https://emacsredux.com/blog/2013/07/17/make-use-of-the-super-key/)
+  - [lowercase `s` as prefix in `describe-bindings`](https://emacs.stackexchange.com/questions/76385/lowercase-s-as-prefix-in-describe-bindings)
+- IDO, FIDO
+  - [Introduction to IDO mode](https://www.masteringemacs.org/article/introduction-to-ido-mode)

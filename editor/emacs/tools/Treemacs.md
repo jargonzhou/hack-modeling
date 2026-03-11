@@ -1,6 +1,6 @@
 # Treemacs
 * https://github.com/Alexander-Miller/treemacs
-* [Keymap](https://github.com/Alexander-Miller/treemacs?tab=readme-ov-file#keymap)
+* [Keymap](https://github.com/Alexander-Miller/treemacs#keymap)
 
 > Treemacs is a file and project explorer similar to NeoTree or vim’s NerdTree, but largely inspired by the Project Explorer in Eclipse. It shows the file system outlines of your projects in a simple tree layout allowing quick navigation and exploration, while also possessing **basic** file management utilities. Specifically a quick feature overview looks as follows:
 >
@@ -22,9 +22,17 @@
 >- **Bookmark integration**: Running `bookmark-set` on a Treemacs item will store a bookmark to Treemacs buffer for that item.
 
 # Installation
-```
-# see ~/.config/doom/init.el
+```shell
+M-x install-package RET
+treemacs RET
+
+# example: see ~/.config/doom/init.el
 M-x treemacs
+
+# fix on Windows
+# ~\AppData\Roaming\.emacs.d\elpa\treemacs-20251226.1307\treemacs-customization.el
+# M-x customize-variable
+treemacs-python-executable
 ```
 
 ```lisp

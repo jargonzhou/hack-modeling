@@ -1,6 +1,6 @@
 # Org Mode
 * https://orgmode.org/
-* Org-Mode Reference Card
+* [Org-Mode Reference Card](https://orgmode.org/orgcard.pdf)
 
 > Org Mode: Your life in plain text
 > 
@@ -76,7 +76,6 @@ Tutorial
 # Org Mode Compact Guide
 
 ## Dates and Times
-
 
 > Timestamps
 

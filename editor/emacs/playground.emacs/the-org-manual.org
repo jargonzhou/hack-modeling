@@ -1,0 +1,7 @@
+* First (top) level headline
+** Second level
+*** Third level
+    some text
+*** Third level
+    more text
+* Another first (top) level headline
