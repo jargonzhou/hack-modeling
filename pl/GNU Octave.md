@@ -1,0 +1,12 @@
+# GNU Octave
+* https://octave.org/
+
+Scientific Programming Language
+
+- Powerful **mathematics-oriented syntax** with built-in **2D/3D plotting and visualization tools**
+- Free software, runs on GNU/Linux, macOS, BSD, and Microsoft Windows
+- Drop-in **compatible with many Matlab scripts**
+
+GNU Octave is a high-level language, primarily intended for **numerical computations**. It provides a convenient command line interface for solving linear and nonlinear problems numerically, and for performing other numerical experiments using a language that is mostly compatible with Matlab. It may also be used as a batch-oriented language.
+
+Octave has extensive tools for solving common numerical linear algebra problems, finding the roots of nonlinear equations, integrating ordinary functions, manipulating polynomials, and integrating ordinary differential and differential-algebraic equations. It is easily extensible and customizable via user-defined functions written in Octave’s own language, or using dynamically loaded modules written in C++, C, Fortran, or other languages.
