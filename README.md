@@ -1,7 +1,8 @@
 # hack-modeling
 A collection of materials and actions on hacking modeling methodology.
 
-- [Programming Languages](./pl/Programming%20Languages.md)
+# Programming Languages
+* [Programming Languages](./pl/Programming%20Languages.md)
 
 # Model
 * [NuSMV](./model/NuSMV/README.md): symbolic model checker.
@@ -19,5 +20,5 @@ A collection of materials and actions on hacking modeling methodology.
 * [Terminology](./cp/Terminology.md)
 
 # Machine Learning
-* [Machine Learning](./ml/Machine%20Learning.md)
+* [Machine Learning](./ml/README.md)
 * [Terminology](./ml/Terminology.md)

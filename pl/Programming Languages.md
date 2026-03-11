@@ -1,6 +1,5 @@
 # Programming Languages
 
-
 * [Compiler](./Compiler/Compiler.md): compiler tools.
 * [Configuration Languages](./Configuration%20Languages.md)
 * [JFLAP](./JFLAP/README.md): formal languages experimenting, NFA, NPDA, TM, grammars.
@@ -15,7 +14,6 @@
   - [Haskell](./Types/Haskell/Haskell.md)
   - [Idris](./Types/Idris/Idris.md): Type-Driven Development, Type Checker.
   - [Ocaml](./Types/OCaml/OCaml.md)
-
 
 # See Also
 * [Google Style Guides](https://google.github.io/styleguide/)

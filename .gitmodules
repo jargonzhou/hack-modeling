@@ -13,3 +13,6 @@
 [submodule "pl/Compiler/JVM"]
 	path = pl/Compiler/JVM
 	url = https://github.com/jargonzhou/hack-jvm
+[submodule "ml"]
+	path = ml
+	url = https://github.com/jargonzhou/hack-ml
