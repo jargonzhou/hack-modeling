@@ -1,5 +1,7 @@
 # OCaml
 * https://ocaml.org/
+* https://github.com/ocaml/ocaml
+* https://en.wikipedia.org/wiki/OCaml
 
 > An industrial-strength functional programming language with an emphasis on expressiveness and safety
 
@@ -14,7 +16,14 @@
 > - **Type inference,** so you don’t need to annotate every function parameter, return type, and variable. Instead, types are inferred based on how a value is used. Available in a limited form in C# with implicitly-typed local variables and in C++11 with its auto keyword.
 > - **Algebraic data types** and **pattern matching** to define and manipulate complex data structures, also available in Scala and F#.
 
-## Actions
+actions
 * [hello](./hello/README.md)
 * [minimo](./minimo/README.md)
 * [OCaml from the Very Beginning](./oftvb/README.md)
+
+
+# Tools
+* [ocamlformat](https://github.com/ocaml-ppx/ocamlformat): Auto-formatter for OCaml code
+* [OCaml Scientific Computing](https://ocaml.xyz/): [Code](https://github.com/owlbarn)
+  * OCaml Scientific Computing
+  * Architecture of Advanced Numerical Analysis Systems

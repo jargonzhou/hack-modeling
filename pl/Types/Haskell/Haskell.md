@@ -1,5 +1,7 @@
 # Haskell
 * https://www.haskell.org/
+* https://wiki.haskell.org/
+* https://github.com/haskell
 
 > Haskell is a purely functional programming language that features referential transparency, immutability and lazy evaluation.
 
@@ -11,18 +13,18 @@ Features:
 - **Lazy**: Functions don't evaluate their arguments. This means that programs can compose together very well, with the ability to write control constructs (such as if/else) just by writing normal functions. The purity of Haskell code makes it easy to fuse chains of functions together, allowing for performance benefits.
 - **Packages**: Open source contribution to Haskell is very active with a wide range of packages available on the public package servers.
 
-## Actions
+Actions
 * [Examples in 'Get Programming with Haskell'](./get-programming-with-haskell/README.md)
 * [Examples in 'Effective Haskell'](./effective-haskell/README.md)
 * [Examples in 'Developing Web Apps with Haskell and Yesod'](./learn-yesod/README.md)
 
-## Graphs
+# Graphs
 
 - Context in Types
 
 ![Context](./graphs/context.svg)
 
-## TODOs
+# TODOs
 
 - Library document: `Prelude` in GHC-9.4.8, GHC langauge extensions, etc.
 - [x] Testing framework: QuickCheck.
@@ -31,3 +33,8 @@ Features:
 - Message Broker libraries: Kafka etc.
 - Web framework: Yesod.
 - Build tools configuration: cabal, stack.
+
+# See Also
+* [GHC Proposals](https://github.com/ghc-proposals/ghc-proposals)
+* [Haskell 2010 Language Report](https://www.haskell.org/onlinereport/haskell2010/)
+* [The Typeclassopedia](https://wiki.haskell.org/Typeclassopedia): The goal of this document is to serve as a starting point for the student of Haskell wishing to gain a firm grasp of its standard type classes. The essentials of each type class are introduced, with examples, commentary, and extensive references for further reading.
