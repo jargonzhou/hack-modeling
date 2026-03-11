@@ -1,4 +1,5 @@
 target/
+Backlog.md
 
 ################################################################################
 # Algorithms
@@ -60,8 +61,6 @@ model/TLAplus/vscode-model/TLAplus/out.csv
 # Programming Lanaugages
 ################################################################################
 # Assembly
-# FIXME
-pl/Assembly/
 
 # C
 # FIXME

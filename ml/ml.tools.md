@@ -50,6 +50,18 @@
 * [NN-SVG](https://github.com/alexlenail/NN-SVG): Publication-ready NN-architecture schematics.
 * [TensorSpace](https://github.com/tensorspace-team/tensorspace): a neural network 3D visualization framework built using TensorFlow.js, Three.js and Tween.js.
 
+# Datasets
+* [Project Gutenberg](https://www.gutenberg.org/): Project Gutenberg is a library of over 75,000 free eBooks.
+
+# Miscellaneous
+* [Beads](https://github.com/steveyegge/beads): Beads provides a persistent, structured memory for coding agents. It replaces messy markdown plans with a dependency-aware graph, allowing agents to handle long-horizon tasks without losing context.
+* [Dolt](https://github.com/dolthub/dolt): Dolt is a SQL database that you can fork, clone, branch, merge, push and pull just like a Git repository.
+* [Text-to-SQL/NL2SQL Handbook](https://github.com/HKUSTDial/NL2SQL_Handbook): This is a continuously updated handbook for readers to easily track the latest Text-to-SQL techniques in the literature and provide practical guidance for researchers and practitioners.
+
+# See Also
+* [Awesome AI for LAM](https://ai4lam.github.io/awesome-ai4lam/): A curated list of resources, projects, and tools for using Artificial Intelligence in Libraries, Archives, and Museums.
+* [Awesome AI Tools](https://github.com/mahseema/awesome-ai-tools): A curated list of Artificial Intelligence Top Tools.
+
 # Internal
 
 * ml_tools

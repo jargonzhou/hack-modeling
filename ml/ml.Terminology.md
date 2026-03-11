@@ -5,6 +5,11 @@
 
 In artificial neural networks, the activation function of a node is **a function that calculates the output of the node based on its individual inputs and their weights**. Nontrivial problems can be solved using only a few nodes if the activation function is nonlinear.
 
+# Agent/智能体
+* https://en.wikipedia.org/wiki/Intelligent_agent
+
+In artificial intelligence, an intelligent agent is an entity that perceives its environment, takes actions autonomously to achieve goals, and may improve its performance through machine learning or by acquiring knowledge.
+
 # Attention/注意力机制
 * https://en.wikipedia.org/wiki/Attention_(machine_learning)
 
@@ -84,6 +89,9 @@ In deep learning, fine-tuning is an approach to *transfer learning* in which the
 Fine-tuning can be done on the entire neural network, or on only a subset of its layers, in which case the layers that are not being fine-tuned are "frozen" (i.e., not changed during backpropagation). 
 A model may also be augmented with "adapters"—lightweight modules inserted into the model's architecture that nudge the embedding space for domain adaptation. These contain far fewer parameters than the original model and can be fine-tuned in a parameter-efficient way by tuning only their weights and leaving the rest of the model's weights frozen.
 
+# GPT(Generative Pre-trained Transformer)/生成式预训练Transformer
+* https://en.wikipedia.org/wiki/Generative_pre-trained_transformer
+
 # Hyperparameter/超参数
 * https://en.wikipedia.org/wiki/Hyperparameter_(machine_learning)
 
@@ -93,6 +101,9 @@ In machine learning, a hyperparameter is **a parameter that can be set in order 
 * https://en.wikipedia.org/wiki/Learning_curve_(machine_learning)
 
 In machine learning (ML), a learning curve (or training curve) is a graphical representation that shows how a model's performance on a training set (and usually a validation set) changes with the number of training iterations (epochs) or the amount of training data. Typically, the number of training epochs or training set size is plotted on the x-axis, and the value of the loss function (and possibly some other metric such as the cross-validation score) on the y-axis.
+
+# LLM(Large Language Model)/大语言模型
+* https://en.wikipedia.org/wiki/Large_Language_Model
 
 # Model Context Protocol (MCP)/模型上下文协议
 * https://modelcontextprotocol.io/docs/getting-started/intro
@@ -120,10 +131,18 @@ In statistics, naive (sometimes simple or idiot's) Bayes classifiers are a famil
 
 # PCA: Principle Component Analysis/主成分分析
 
+# Prompt Engineering/提示工程
+* https://en.wikipedia.org/wiki/Prompt_engineering
+
 # Regularization/正则化
 * https://en.wikipedia.org/wiki/Regularization_(mathematics)
 
 In mathematics, statistics, finance, and computer science, particularly in machine learning and inverse problems, regularization is a process that converts the answer to a problem to a simpler one. It is often used in solving ill-posed problems(不适定问题) or to prevent overfitting(避免过拟合).
+
+# RAG(Retrieval-Augmented Generation)/检索增强生成
+* https://en.wikipedia.org/wiki/Retrieval-augmented_generation
+
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/RAG_diagram.svg/1024px-RAG_diagram.svg.png)
 
 # ROC curve: Receiver Operating Characteristic
 * https://en.wikipedia.org/wiki/Receiver_operating_characteristic
@@ -133,12 +152,17 @@ A receiver operating characteristic curve, or ROC curve, is a graphical plot tha
 
 The ROC curve is the plot of the true positive rate (TPR) against the false positive rate (FPR) at each threshold setting.
 
-# SGD: Stochastic gradient descent/随机梯度下降
+# RNN(Recurrent Neural Network)/循环神经网络
+* https://en.wikipedia.org/wiki/Recurrent_neural_network
+
+两种架构: LSTM(长短期记忆网络), BRNN(双向循环神经网络)
+
+# SGD(Stochastic gradient descent)/随机梯度下降
 * https://en.wikipedia.org/wiki/Stochastic_gradient_descent
 
 Stochastic gradient descent (often abbreviated SGD) is **an iterative method for optimizing an objective function with suitable smoothness properties** (e.g. differentiable or subdifferentiable). It can be regarded as a stochastic approximation of gradient descent optimization, since it replaces the actual gradient (calculated from the entire data set) by an estimate thereof (calculated from a randomly selected subset of the data). Especially in high-dimensional optimization problems this reduces the very high computational burden, achieving faster iterations in exchange for a lower convergence rate.
 
-# t-SNE: t-Distributed Stochastic Neighbor Embedding
+# t-SNE(t-Distributed Stochastic Neighbor Embedding)
 
 # Transfer learning/迁移学习
 * https://en.wikipedia.org/wiki/Transfer_learning
@@ -148,9 +172,21 @@ Transfer learning (TL) is a technique in machine learning (ML) in which knowledg
 # Transformers
 * https://en.wikipedia.org/wiki/Transformer_(deep_learning_architecture)
 
-In deep learning, transformer is a neural network architecture based on the **multi-head attention mechanism**, in which text is converted to numerical representations called *tokens*, and each token is converted into a vector via lookup from a word embedding table. At each layer, each token is then contextualized within the scope of the context window with other (unmasked) tokens via a parallel multi-head attention mechanism, allowing the signal for key tokens to be amplified and less important tokens to be diminished.
+In deep learning, transformer is a neural network architecture based on the **multi-head attention mechanism**, in which text is converted to numerical representations called *tokens*, and each token is converted into a vector via lookup from a word embedding table.
+At each layer, each token is then contextualized within the scope of the context window with other (unmasked) tokens via a parallel multi-head attention mechanism, allowing the signal for key tokens to be amplified and less important tokens to be diminished.
 
 # Vanishing gradient problem/梯度消失问题
 * https://en.wikipedia.org/wiki/Vanishing_gradient_problem
 
 梯度消失问题: 基于梯度的学习方法中, 权重的更新是与当前权重上的错误函数的偏导成比例的. 在一些情况下, 梯度极其的小, 权重无法有效更新.
+
+# Vibe Coding/氛围编码
+* https://en.wikipedia.org/wiki/Vibe_coding
+
+In computer programming, vibe coding is an AI-assisted software development practice/AI辅助软件开发实践. It is a chatbot-based approach to creating software where the developer describes a project or task to a large language model (LLM), which generates source code based on the prompt. The developer does not review or edit the code, but solely uses tools and execution results to evaluate it and asks the LLM for improvements. Unlike traditional AI-assisted coding or pair programming, the human developer avoids examination of the code, accepts AI-suggested completions without human review, and focuses more on iterative experimentation than on code correctness or structure.
+
+Tools
+* Cursor AI
+* Claude 3.7 Sonnet
+* Super Whisper
+* Google AI Studio
