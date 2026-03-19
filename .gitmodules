@@ -16,3 +16,6 @@
 [submodule "ml"]
 	path = ml
 	url = https://github.com/jargonzhou/hack-ml
+[submodule "pl/Rust"]
+	path = pl/Rust
+	url = https://github.com/jargonzhou/learning-rust

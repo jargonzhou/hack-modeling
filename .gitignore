@@ -107,8 +107,6 @@ pl/Types/OCaml/**/*.out
 pl/R/
 
 # Rust
-# FIXME
-pl/Rust/
 
 # Tools
 pl/tools/Bazel/examples
