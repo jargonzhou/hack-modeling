@@ -19,3 +19,6 @@
 [submodule "pl/Rust"]
 	path = pl/Rust
 	url = https://github.com/jargonzhou/learning-rust
+[submodule "pl/frontend"]
+	path = pl/frontend
+	url = https://github.com/jargonzhou/learning-frontend-stack
