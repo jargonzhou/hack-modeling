@@ -64,21 +64,4 @@ TOML aims to be a minimal configuration file format that's easy to read due to o
 see [Even Better TOML](https://github.com/tamasfe/taplo) in [Python tools - Poetry](https://github.com/jargonzhou/learning-python/blob/main/tools/poetry/Poetry.md) 
 
 # YAML
-* https://yaml.org/
-
-> YAML(YAML Ain't Markup Language™) - [wikipedia](https://en.wikipedia.org/wiki/YAML)
-> 
-> YAML (/ˈjæməl/) is a human-readable data serialization language. It is commonly used for configuration files and in applications where data are being stored or transmitted. YAML targets many of the same communications applications as Extensible Markup Language (XML) but has a minimal syntax that intentionally differs from Standard Generalized Markup Language (SGML). It uses Python-style indentation to indicate nesting and does not require quotes around most string values (it also supports JSON style `[...]` and `}` mixed in the same file).
-
-Tutorials
-* [YAML Tutorial : A Complete Language Guide with Examples](https://spacelift.io/blog/yaml) - 2024-09
-* [What is YAML?](https://www.redhat.com/en/topics/automation/what-is-yaml) - 2023-03, used in Ansible, Kubernetes
-> A common question for YAML beginners is “What do the 3 dashes mean?” 3 dashes (`---`) are used to signal the start of a document, while each document ends with three dots (`...`). 
-
-multiline wrap without space
-* [YAML multiline wrap without space](https://stackoverflow.com/questions/19168734/yaml-multiline-wrap-without-space)
-```yaml
-"abcdefghi\
-jklmnopqr\
-stuvwxyz"
-```
+* [YAML](./confLang/YAML.md)
