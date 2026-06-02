@@ -22,3 +22,6 @@
 [submodule "pl/frontend"]
 	path = pl/frontend
 	url = https://github.com/jargonzhou/learning-frontend-stack
+[submodule "pl/Zig"]
+	path = pl/Zig
+	url = https://github.com/jargonzhou/learning-zig
