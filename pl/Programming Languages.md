@@ -14,7 +14,7 @@
   - [Haskell](./Types/Haskell/Haskell.md)
   - [Idris](./Types/Idris/Idris.md): Type-Driven Development, Type Checker.
   - [Ocaml](./Types/OCaml/OCaml.md)
-* [Zig](./Zig/README.md)
+* [Zig](./Zig/README.md): Zig is a general-purpose programming language and toolchain for maintaining **robust**, **optimal** and **reusable** software.
 
 # See Also
 * [Google Style Guides](https://google.github.io/styleguide/)
