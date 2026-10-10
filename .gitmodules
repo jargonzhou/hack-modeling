@@ -25,3 +25,6 @@
 [submodule "pl/Zig"]
 	path = pl/Zig
 	url = https://github.com/jargonzhou/learning-zig
+[submodule "pl/Tools"]
+	path = pl/Tools
+	url = https://github.com/jargonzhou/pl-tools.git
